@@ -2,41 +2,28 @@ tabs:
     fields:
         # TAB: Basic info
         website_name:
-            tab: Basic Info
+            tab: Devalop
             label: Website Name
             type: text
-            default: Zenii
+            default: PTCA
     
         website_author:
-            tab: Basic Info
+            tab: Devalop
             label: Author
             type: text
-            default: The Baker Dev
+            default: Serikov Kaisarhan
     
         website_url:
-            tab: Basic Info
+            tab: Devalop
             label: URL
             type: text
-            default: http://template.thebakerdev.com/zenii
+            default: http://skk.kz
     
         description:
-            tab: Basic Info
+            tab: Devalop
             label: Description
             type: textarea
-            default: A free flat landing page theme using Tailwindcss.
-    
-        keywords:
-            tab: Basic Info
-            label: Keywords
-            type: taglist
-            separator: comma
-            default: october,octobercms,themes,templates,free octobercms themes
-            options:
-            - october
-            - octobercms
-            - themes
-            - templates
-            - free octobercms themes
+            default: Разработано по заказу Профессионального технического колледжа города Астаны
         # TAB: THEME COLORS
         override_color: 
             tab: Theme Colors
@@ -134,25 +121,7 @@ tabs:
             default: email
             span: right
 
-        # TAB: HERO
-        hero_title:
-            tab: Hero
-            label: Title
-            type: text
-            default: Bacon ipsum dolor
-        
-        hero_subtitle:
-            tab: Hero
-            label: Subtitle
-            type: text
-            default: Voluptate ball tip jerky ullamco dolore
-
-        hero_description:
-            tab: Hero
-            label: Description
-            type: textarea
-            default: Cillum ad deserunt chuck kielbasa sunt short ribs voluptate shank hamburger aliquip chicken.
-        
+        # TAB: HERO        
         hero_button_text:
             tab: Hero
             label: Button Text
@@ -168,89 +137,28 @@ tabs:
         
         hero_image:
             tab: Hero
-            label: Hero Image
-            type: mediafinder
-            mode: image
-
-        # TAB: ABOUT
-        about_title:
-            tab: About
-            label: Title 
-            type: text
-            default: About us
-        
-        about_description:
-            tab: About  
-            label: Description 
-            type: textarea
-            default: Tail aliquip labore pig sirloin pork prosciutto landjaeger ham, cupim adipisicing eiusmod sunt. Strip steak sausage shank kielbasa fatback pork belly.
-        
-        about_image:
-            tab: About
-            label: About Image
-            type: mediafinder
-            mode: image
-
-        about_items:
-            tab: About
-            label: About Items 
-            titleFrom: title
-            prompt: Add new about item
+            label: Hero Slide
             type: repeater
             form:
                 fields:
-                    icon:
-                        label: Icon (Material Icons)
-                        type: text
-                        default: alarm_on
-                        span: left
                     title:
-                        label: Title
+                        label: Заголовок
                         type: text
-                        default: About
+                        default: Заголовок
+                        span: left
+                    subtitle:
+                        label: Подзаголовок
+                        type: text
+                        default: Какойто подзаголовок
                         span: right
                     description:
-                        label: Description
+                        label: Описание
                         type: textarea
-        
-        # TAB: TESTIMONIALS
-        testimonial_title:
-            tab: Testimonial
-            label: Title 
-            type: text
-            default: What our customers are saying
-        
-        testimonial_description:
-            tab: Testimonial
-            label: Description 
-            type: text
-            default: Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi repudiandae.
-
-        testimonials:
-            tab: Testimonial
-            label: Testimonials 
-            titleFrom: name
-            prompt: Add new testimonial
-            type: repeater
-            form:
-                fields:
-                    name:
-                        label: Name
-                        type: text
-                        span: left
-                    company:
-                        label: Company
-                        type: text
-                        span: right
+                        default: Какоето описание 
                     image:
                         label: Image
                         type: mediafinder
                         mode: image
-                        span: left
-                    comment:
-                        label: Comment
-                        type: textarea
-                        span: right
 
         # TAB: SERVICES
         service_title:
@@ -258,6 +166,13 @@ tabs:
             label: Title 
             type: text 
             default: Services
+            span: left
+        service_subtitle:
+            tab: Services 
+            label: SubTitle 
+            type: text 
+            default: Subtitle Services
+            span: right
         
         services:
             tab: Services
@@ -279,57 +194,85 @@ tabs:
                         label: Description
                         type: textarea
                         span: right
-        # TAB: PRICING
-        pricing_title:
-            tab: Pricing 
-            label: Title
-            type: text
-            default: Pricing 
 
-        pricing_plans:
-            tab: Pricing
-            label: Pricing Plans 
-            titleFrom: plan_title
-            prompt: Add new plan
+         # TAB: ENROLL
+        enroll_title:
+            tab: Enroll
+            label: Title 
+            type: text 
+            default: Enroll
+            span: left
+        enroll_subtitle:
+            tab: Enroll
+            label: SubTitle 
+            type: text 
+            default: Subtitle Enroll
+            span: right
+        enroll_bgimage:
+            tab: Enroll
+            label: Заднее фото
+            type: mediafinder
+            mode: image
+            span: left
+        enroll_image:
+            tab: Enroll
+            label: Основное фото
+            type: mediafinder
+            mode: image
+            span: right
+        
+        enroll:
+            tab: Enroll
+            label: Enroll
+            titleFrom: title
+            prompt: Add new service
             type: repeater
             form:
                 fields:
-                    plan_title:
-                        label: Plan Title
+                    title:
+                        label: Number
                         type: text
-                    currency:
-                        label: Currency
-                        type: text
-                        placeholder: $
                         span: left
-                    price:
-                        label: Price 
+                        default: 1
+                    name:
+                        label: Title
                         type: text
                         span: right
-                    plan_type:
-                        label: Plan Type
+                        default: You title
+                    description:
+                        label: Description
                         type: text
-                        placeholder: mo/person/month
+                        default: You Description
+
+        # TAB: FACTS
+        facts_bgimage:
+            tab: Facts
+            label: Заднее фото
+            type: mediafinder
+            mode: image
+        facts:
+            tab: Facts
+            label: Факты
+            titleFrom: title
+            prompt: Add new facts
+            type: repeater
+            form:
+                fields:
+                    quantity:
+                        label: Количество
+                        type: text
                         span: left
-                    highlighted:
-                        label: Highlighted
-                        type: switch
-                        options:
-                            on: true
-                            off: false
-                        span: right
-                    plan_features:
-                        label: Features
-                        type: taglist
-                    button_text:
-                        label: Button Text
-                        type: text
-                        default: Subscribe
-                        span: left 
-                    button_url:
-                        label: Button URL
+                        default: 50
+                    name:
+                        label: Title
                         type: text
                         span: right
+                        default: Лет
+                    description:
+                        label: Icons
+                        type: text
+                        default: ti-crown
+
         # TAB: CONTACT
         contact_title:
             tab: Contact
@@ -369,28 +312,3 @@ tabs:
             tab: Social
             label: Instagram URL
             type: text
-        # TAB: EXTRAS
-        disable_framework_extras:
-            tab: Extras
-            label: Disable framework extras
-            type: switch
-            default: 1
-            options:
-                on: disabled 
-                off: enabled 
-        disable_smooth_scrolling:
-            tab: Extras 
-            label: Disable smooth scrolling
-            type: switch
-            default: 0
-            options:
-                on: disabled 
-                off: enabled 
-        disable_scroll_animation:
-            tab: Extras 
-            label: Disable scroll animation
-            type: switch 
-            default: 0
-            options:
-                on: disabled 
-                off: enabled 
