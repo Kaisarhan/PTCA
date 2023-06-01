@@ -263,12 +263,12 @@ tabs:
                         type: text
                         span: left
                         default: 50
-                    name:
+                    title:
                         label: Title
                         type: text
                         span: right
                         default: Лет
-                    description:
+                    icon:
                         label: Icons
                         type: text
                         default: ti-crown
