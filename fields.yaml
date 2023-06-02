@@ -1,5 +1,10 @@
 tabs:
     fields:
+        # TAB: test search 
+        toolbar:
+            buttons: list_toolbar
+            search:
+                prompt: Find records
         # TAB: Basic info
         website_name:
             tab: Devalop
@@ -24,6 +29,7 @@ tabs:
             label: Description
             type: textarea
             default: Разработано по заказу Профессионального технического колледжа города Астаны
+
         # TAB: THEME COLORS
         link_color:
             tab: Theme Colors
