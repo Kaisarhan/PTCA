@@ -172,7 +172,7 @@ layout = "default"
 					{% if (this.theme.enroll|length > 0)%}
 					{% for item in this.theme.enroll %}
 						<div class="enroll-list-item">
-							<span>{{ item.title }}</span>
+							<span>{{loop.index}}</span>
 							<h5>{{ item.name }}</h5>
 							<p>{{ item.description }}</p>
 						</div>
@@ -404,8 +404,8 @@ layout = "default"
 			<div class="gallery-item gi-big set-bg" data-setbg="{{'assets/img/gallery/1.jpg'|theme }}">
 				<a class="img-popup" href="{{'assets/img/gallery/1.jpg'|theme }}"><i class="ti-plus"></i></a>
 			</div>
-			<div class="gallery-item set-bg" data-setbg="{{'assets/img/gallery/2.jpg'|theme }}">
-				<a class="img-popup" href="{{'assets/img/gallery/2.jpg'|theme }}"><i class="ti-plus"></i></a>
+			<div class="gallery-item set-bg" data-setbg="{{'assets/img/gallery/1.jpg'|theme }}">
+				<a class="img-popup" href="{{'assets/img/gallery/1.jpg'|theme }}"><i class="ti-plus"></i></a>
 			</div>
 			<div class="gallery-item set-bg" data-setbg="{{'assets/img/gallery/3.jpg'|theme }}">
 				<a class="img-popup" href="{{'assets/img/gallery/3.jpg'|theme }}"><i class="ti-plus"></i></a>

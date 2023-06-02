@@ -21,6 +21,12 @@ description = "Default layout"
 	    <link rel="stylesheet" href="{{ 'assets/css/animate.css'|theme }}">
 	    <link rel="stylesheet" href="{{ 'assets/css/owl.carousel.css'|theme }}">
 	    <link rel="stylesheet" href="{{ 'assets/css/style.css'|theme }}">
+<style>
+    :root {
+        --theme-color: {{ this.theme.link_color }};
+        --theme-color-two: {{ this.theme.link_color_two }}
+    }
+</style>
 
 {#         <link href="{{ 'assets/rec/css/vendor.css'|theme }}" rel="stylesheet">
         <link href="{{ 'assets/rec/css/theme.css'|theme }}" rel="stylesheet"> #}
