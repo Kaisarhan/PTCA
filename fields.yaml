@@ -85,41 +85,55 @@ tabs:
             type: text
             default: Your company address
             span: left
-        
-        company_address_icon:
-            tab: Company Info 
-            label: Company Address Icon
-            type: text
-            default: business
-            span: right
-        
-        company_contact_number:
-            tab: Company Info 
-            label: Contact Number 
-            type: text
-            default: (541) 754-3010
-            span: left
 
-        company_contact_number_icon:
+        company_address_url:
             tab: Company Info 
-            label: Contact Number Icon
+            label: Address URL
             type: text
-            default: settings_phone
+            default: https://2gis.kz/astana/firm/70000001018111176
             span: right
         
+        company_work_number:
+            tab: Company Info 
+            label: Рабочий номер 
+            type: text
+            default: +77020000000
+            span: left  
+
+        company_mobile_number:
+            tab: Company Info 
+            label: Сотовый номер 
+            type: text
+            default: +77020000000
+            span: right   
+
+        company_work_time:
+            tab: Company Info 
+            label: График работы
+            type: text
+            default: "Monday - Friday: 08 AM - 06 PM"
+            span: left  
+
         company_email:
             tab: Company Info 
             label: Email 
             type: text
             default: email@email.com
-            span: left
-        
-        company_email_icon:
+            span: right  
+
+        company_logo_description:
             tab: Company Info 
-            label: Email Icon
-            type: text
-            default: email
-            span: right
+            label: Описание под лого
+            type: textarea
+
+        company_logo:
+            tab: Company Info 
+            label: Ваш логотип
+            type: mediafinder
+            mode: image
+            imageWidth: '100'
+            imageHeight: '100'
+            span: left
 
         # TAB: HERO        
         hero_button_text:
@@ -272,24 +286,6 @@ tabs:
                         label: Icons
                         type: text
                         default: ti-crown
-
-        # TAB: CONTACT
-        contact_title:
-            tab: Contact
-            label: Title
-            type: text
-            default: Contact
-
-        contact_description:
-            tab: Contact  
-            label: Description
-            type: textarea
-
-        contact_image:
-            tab: Contact
-            label: Image
-            type: mediafinder
-            mode: image
 
         # TAB: SOCIAL
         social_title:
