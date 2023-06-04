@@ -1,9 +1,19 @@
-title = "Demonstration"
+title = "Home"
 url = "/"
 layout = "default"
-==
+is_hidden = 0
 
-	<!-- Hero section -->
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "news"
+postsPerPage = 4
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog"
+postPage = "post"
+==
+{% set posts = blogPosts.posts %}
+<!-- Hero section -->
 	<section class="hero-section">
 		<div class="hero-slider owl-carousel">
 		{% if (this.theme.hero_image|length > 0)%}
@@ -57,7 +67,6 @@ layout = "default"
 	</section>
 	<!-- Hero section end -->
 
-
 	<!-- Counter section  -->
 	<section class="counter-section">
 		<div class="container">
@@ -75,7 +84,6 @@ layout = "default"
 		</div>
 	</section>
 	<!-- Counter section end -->
-
 
 	<!-- Services section -->
 	<section class="service-section spad">
@@ -158,7 +166,6 @@ layout = "default"
 	</section>
 	<!-- Services section end -->
 
-	
 	<!-- Enroll section -->
 	<section class="enroll-section spad set-bg" data-setbg="{% if (this.theme.enroll_bgimage|length > 0)%}{{ this.theme.enroll_bgimage|media }} {% else %}{{'assets/img/enroll-bg.jpg'|theme }} {% endif %}">
 		<div class="container">
@@ -203,7 +210,6 @@ layout = "default"
 		</div>
 	</section>
 	<!-- Enroll section end -->
-
 
 	<!-- Courses section -->
 	<section class="courses-section spad">
@@ -438,180 +444,24 @@ layout = "default"
 				<p>Get latest breaking news & top stories today</p>
 			</div>
 			<div class="row">
+{% for post in posts %}
 				<div class="col-xl-6">
 					<div class="blog-item">
-						<div class="blog-thumb set-bg" data-setbg="{{'assets/img/blog/1.jpg'|theme }}"></div>
+					{% for image in post.featured_images|slice(0,1)%}
+						<div class="blog-thumb set-bg" data-setbg="{{ image.path }}"></div>
+					{% endfor %}
 						<div class="blog-content">
-							<h4>Parents who try to be their children’s best friends</h4>
+							<h4>{{post.title}}</h4>
 							<div class="blog-meta">
-								<span><i class="fa fa-calendar-o"></i> 24 Mar 2018</span>
-								<span><i class="fa fa-user"></i> Owen Wilson</span>
+								<span><i class="fa fa-calendar-o"></i> {{ post.published_at|date ('d M Y')}}</span>
+								<span><i class="fa fa-user"></i> {{post.user.first_name}} {{post.user.last_name}}</span>
 							</div>
-							<p>Integer luctus diam ac scerisque consectetur. Vimus dot euismod neganeco lacus sit amet. Aenean interdus mid vitae sed accumsan...</p>
+							<p>{{post.excerpt}}</p>
 						</div>
 					</div>
 				</div>
-				<div class="col-xl-6">
-					<div class="blog-item">
-						<div class="blog-thumb set-bg" data-setbg="{{'assets/img/blog/2.jpg'|theme }}"></div>
-						<div class="blog-content">
-							<h4>Graduations could be delayed as external examiners</h4>
-							<div class="blog-meta">
-								<span><i class="fa fa-calendar-o"></i> 23 Mar 2018</span>
-								<span><i class="fa fa-user"></i> Owen Wilson</span>
-							</div>
-							<p>Integer luctus diam ac scerisque consectetur. Vimus dot euismod neganeco lacus sit amet. Aenean interdus mid vitae sed accumsan...</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-6">
-					<div class="blog-item">
-						<div class="blog-thumb set-bg" data-setbg="{{'assets/img/blog/3.jpg'|theme }}"></div>
-						<div class="blog-content">
-							<h4>Private schools adopt a Ucas style application system</h4>
-							<div class="blog-meta">
-								<span><i class="fa fa-calendar-o"></i> 24 Mar 2018</span>
-								<span><i class="fa fa-user"></i> Owen Wilson</span>
-							</div>
-							<p>Integer luctus diam ac scerisque consectetur. Vimus dot euismod neganeco lacus sit amet. Aenean interdus mid vitae sed accumsan...</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-6">
-					<div class="blog-item">
-						<div class="blog-thumb set-bg" data-setbg="{{'assets/img/blog/4.jpg'|theme }}"></div>
-						<div class="blog-content">
-							<h4>Cambridge digs in at the top of university league table</h4>
-							<div class="blog-meta">
-								<span><i class="fa fa-calendar-o"></i> 23 Mar 2018</span>
-								<span><i class="fa fa-user"></i> Owen Wilson</span>
-							</div>
-							<p>Integer luctus diam ac scerisque consectetur. Vimus dot euismod neganeco lacus sit amet. Aenean interdus mid vitae sed accumsan...</p>
-						</div>
-					</div>
-				</div>
+{% endfor %}
 			</div>
 		</div>
 	</section>
 	<!-- Blog section -->
-
-
-
-
-{# <div class="jumbotron">
-    <div class="container">
-        {% content "welcome.htm" %}
-    </div>
-</div>
-
-<div class="container">
-
-    <div class="page-header">
-        <h2>Overview <small>Basic concepts</small></h2>
-    </div>
-    <p>
-        This page demonstrates the basic CMS features.
-        Usually each page built with Winter is a combination of a layout, page, partials and content blocks,
-        although in simple cases you can just use a page without anything else.
-    </p>
-
-    <!-- Layouts -->
-    <h3>Layouts</h3>
-    <p class="lead">
-        <i class="icon-th-large"></i> &nbsp; Layouts define the page scaffold.
-    </p>
-    <p>
-        The layout file <code>layouts/default.htm</code> defines the page scaffold &mdash;
-        everything that repeats on each page, such as the HTML, HEAD and BODY tags, StyleSheet and JavaScript references.
-    </p>
-    <p>The page menu and footer in the Demo theme are defined in the layout as well.</p>
-
-    <hr />
-
-    <!-- Pages -->
-    <h3>Pages</h3>
-    <p class="lead">
-        <i class="icon-copy"></i> &nbsp; Pages hold the content for each URL.
-    </p>
-    <p>
-        The page file <code>pages/home.htm</code> defines the page URL (<code>/</code> for this page) and the page content.
-        Pages are rendered inside layouts with this function that should be called in the layout code:
-    </p>
-    <pre>{{ "{% page %}" }}</pre>
-    <p>Using a layout for pages is optional &mdash; you can define everything right in the page file.</p>
-
-    <hr />
-
-    <!-- Partials -->
-    <h3>Partials</h3>
-    <p class="lead">
-        <i class="icon-tags"></i> &nbsp; Partials contain reusable chunks of HTML markup.
-    </p>
-    <p>
-        Partials are chunks of HTML defined in separate files that can be included anywhere.
-        Partials are rendered with:
-    </p>
-    <pre>{{ "{% partial \"partial-name\" %}" }}</pre>
-    <p>You may place partials inside folders too. In this example we placed the footer content to the <code>partials/site/footer.htm</code> partial.</p>
-    <pre>{{ "{% partial \"site/footer\" %}" }}</pre>
-    <p>Partials can be used inside pages, layouts or other partials.</p>
-
-    <hr />
-
-    <!-- Content blocks -->
-    <h3>Content blocks</h3>
-    <p class="lead">
-        <i class="icon-font"></i> &nbsp; Content blocks are text or HTML blocks that can be edited separately from the page or layout.
-    </p>
-    <p>
-        The introductory text used on this page is defined in the <code>content/welcome.htm</code> file.
-        Content blocks are defined and rendered with:
-        <pre>{{ "{% content \"content-name.htm\" %}" }}</pre>
-    </p>
-
-    <hr />
-
-    <!-- Placeholders -->
-    <h3>Placeholders</h3>
-    <p class="lead">
-        <i class="icon-bookmark"></i> &nbsp; Placeholders allow pages to inject content to a layout.
-    </p>
-    <p>
-        The common use is injecting page-specific links to StyleSheet or JavaScript files to the HEAD tag defined in the layout.
-        Placeholders are defined in the layout file and they have names so that they can be referred in the page.
-        Example:
-    </p>
-    <div class="row">
-        <div class="col-md-6">
-            <p>Layout file:</p>
-            <pre>{% content "placeholder/layout.txt" %}</pre>
-        </div>
-        <div class="col-md-6">
-            <p>Page file:</p>
-            <pre>{% content "placeholder/page.txt" %}</pre>
-        </div>
-    </div>
-
-    <hr />
-
-    <!-- Assets -->
-    <h3>Assets</h3>
-    <p class="lead">
-        <i class="icon-picture"></i> &nbsp; Assets are resource files like images and stylesheets.
-    </p>
-    <p>This theme stores its asset files (JavaScript, StyleSheet, images, fonts, etc) in the <code>themes/demo/assets</code> directory. This theme is also packaged with these useful 3rd party tools:</p>
-    <ul class="list-inline">
-        <li><a target="_blank" href="http://getbootstrap.com/">Twitter Bootstrap</a></li>
-        <li><a target="_blank" href="http://fontawesome.io/3.2.1/">Font Awesome</a></li>
-        <li><a target="_blank" href="http://www.google.com/fonts/specimen/Lato">Lato webfont</a></li>
-    </ul>
-    <p>You might prefer to remove them for your website implementation.</p>
-
-    <br />
-
-    <div class="text-center">
-        <p><a href="{{ 'ajax'|page }}" class="btn btn-lg btn-default">Continue to AJAX framework</a></p>
-    </div>
-
-</div>
- #}

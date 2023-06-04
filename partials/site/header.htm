@@ -35,12 +35,12 @@ function onStart()
 				<a href=""><i class="fa fa-search"></i></a>
 			</div> #}
 			<ul class="main-menu">
-				<li class="active"><a href="index.html">Home</a></li>
-				<li><a href="about.html">About Us</a></li>
+				<li class="{% if this.page.id == 'home' %}active{% endif %}"><a href="{{ 'home'|page }}">Home</a></li>
+				<li class="{% if this.page.id == 'about' %}active{% endif %}"><a href="{{ 'about'|page }}">About us</a></li>
 				<li><a href="#">Event</a></li>
 				<li><a href="course.html">COURSES</a></li>
-				<li><a href="blog.html">blog</a></li>
-				<li><a href="contact.html">Contact</a></li>
+				<li class="{% if this.page.id == 'blog' %}active{% endif %}"><a href="{{ 'blog'|page }}">blog</a></li>
+				<li class="{% if this.page.id == 'contact' %}active{% endif %}"><a href="{{ 'contact'|page }}">contact</a></li>
 			</ul>
 		</div>
 	</nav>
