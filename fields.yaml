@@ -1,10 +1,5 @@
 tabs:
     fields:
-        # TAB: test search 
-        toolbar:
-            buttons: list_toolbar
-            search:
-                prompt: Find records
         # TAB: Basic info
         website_name:
             tab: Devalop
