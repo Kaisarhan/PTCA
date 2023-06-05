@@ -17,11 +17,14 @@ is_hidden = 0
 	<section class="about-section spad pt-0">
 		<div class="container">
 			<div class="section-title text-center">
-				<h3>WELCOME TO EZUCA</h3>
-				<p>Let children creative and make a different</p>
+				<h3>{{ this.theme.about_title }}</h3>
+				<p>{{ this.theme.about_subtitle }}</p>
 			</div>
 			<div class="row">
 				<div class="col-lg-6 about-text">
+				{% if (this.theme.about_content|length > 0 )%}
+					{{ this.theme.about_content|md }}
+				{% else %}
 					<h5>About us</h5>
 					<p>Lorem ipsum dolor sitdoni amet, consectetur dont adipis elite. Vivamus interdum ultrices augue. Aenean dos cursus lania. Duis et fringilla leonardo. Mauris mattis phare sem, debut curus risus viverra sed.</p>
 					<h5 class="pt-4">Our history</h5>
@@ -32,9 +35,14 @@ is_hidden = 0
 						<li><i class="fa fa-check-square-o"></i> 50 years of people, and achievements that continue to transform.</li>
 						<li><i class="fa fa-check-square-o"></i> The University's core values are as follows:freedom of thought.</li>
 					</ul>
+				{% endif %}
 				</div>
 				<div class="col-lg-6 pt-5 pt-lg-0">
-					<img src="{{'assets/img/about.jpg'|theme }}" alt="">
+				{% if ( this.theme.about_photo|length > 0 )%} 
+					<img src="{{ this.theme.about_photo|media }}" alt="{{this.theme.about_photo}}">
+				{% else %}
+					<img src="{{'assets/img/about.jpg'|theme }}" alt="{{'assets/img/about.jpg'|theme }}">
+				{% endif %}
 				</div>
 			</div>
 		</div>

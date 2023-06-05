@@ -11,8 +11,28 @@ noPostsMessage = "No posts found"
 sortOrder = "published_at desc"
 categoryPage = "blog"
 postPage = "post"
+
+[blogPosts blogPosts2]
+pageNumber = "{{ :page }}"
+categoryFilter = "Courses"
+postsPerPage = 6
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog"
+postPage = "post"
+
+[blogPosts blogPosts3]
+pageNumber = "{{ :page }}"
+categoryFilter = "events"
+postsPerPage = 2
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog"
+postPage = "post"
 ==
 {% set posts = blogPosts.posts %}
+{% set post2 = blogPosts2.posts %}
+{% set post3 = blogPosts3.posts %}
 <!-- Hero section -->
 	<section class="hero-section">
 		<div class="hero-slider owl-carousel">
@@ -219,84 +239,24 @@ postPage = "post"
 				<p>Building a better world, one course at a time</p>
 			</div>
 			<div class="row">
+			{% for curse in post2 %}
 				<!-- course item -->
 				<div class="col-lg-4 col-md-6 course-item">
 					<div class="course-thumb">
-						<img src="{{'assets/img/course/1.jpg'|theme }}" alt="">
+					{% for image in curse.featured_images|slice(0,1)%}
+						<img src="{{ image.path }}" alt="{{ image.path }}">
+					{% endfor %}
 						<div class="course-cat">
-							<span>BUSINESS</span>
+							<span>{{ curse.excerpt }}</span>
 						</div>
 					</div>
 					<div class="course-info">
-						<div class="date"><i class="fa fa-clock-o"></i> 22 Mar 2018</div>
-						<h4>Certificate Course in Writing<br>for a Global Market</h4>
+						<div class="date"><i class="fa fa-clock-o"></i> {{ curse.published_at|date ('d M Y')}}</div>
+						<a href="{{ curse.url }}"><h4>{{ curse.title }}</h4></a>
 					</div>
 				</div>
 				<!-- course item -->
-				<div class="col-lg-4 col-md-6 course-item">
-					<div class="course-thumb">
-						<img src="{{'assets/img/course/2.jpg'|theme }}" alt="">
-						<div class="course-cat">
-							<span>Marketing</span>
-						</div>
-					</div>
-					<div class="course-info">
-						<div class="date"><i class="fa fa-clock-o"></i> 22 Mar 2018</div>
-						<h4>Google AdWords: Get More<br> Customers with Search Marketing </h4>
-					</div>
-				</div>
-				<!-- course item -->
-				<div class="col-lg-4 col-md-6 course-item">
-					<div class="course-thumb">
-						<img src="{{'assets/img/course/3.jpg'|theme }}" alt="">
-						<div class="course-cat">
-							<span>DESIGN</span>
-						</div>
-					</div>
-					<div class="course-info">
-						<div class="date"><i class="fa fa-clock-o"></i> 22 Mar 2018</div>
-						<h4>The Ultimate Drawing Course<br> Beginner to Advanced</h4>
-					</div>
-				</div>
-				<!-- course item -->
-				<div class="col-lg-4 col-md-6 course-item">
-					<div class="course-thumb">
-						<img src="{{'assets/img/course/4.jpg'|theme }}" alt="">
-						<div class="course-cat">
-							<span>DATABASE</span>
-						</div>
-					</div>
-					<div class="course-info">
-						<div class="date"><i class="fa fa-clock-o"></i> 22 Mar 2018</div>
-						<h4>Ultimate MySQL Bootcamp: Go from SQL Beginner to Expert</h4>
-					</div>
-				</div>
-				<!-- course item -->
-				<div class="col-lg-4 col-md-6 course-item">
-					<div class="course-thumb">
-						<img src="{{'assets/img/course/5.jpg'|theme }}" alt="">
-						<div class="course-cat">
-							<span>PROGRAM</span>
-						</div>
-					</div>
-					<div class="course-info">
-						<div class="date"><i class="fa fa-clock-o"></i> 22 Mar 2018</div>
-						<h4>Web Developer Bootcamp<br>Make web  applications</h4>
-					</div>
-				</div>
-				<!-- course item -->
-				<div class="col-lg-4 col-md-6 course-item">
-					<div class="course-thumb">
-						<img src="{{'assets/img/course/6.jpg'|theme }}" alt="">
-						<div class="course-cat">
-							<span>BUSINESS</span>
-						</div>
-					</div>
-					<div class="course-info">
-						<div class="date"><i class="fa fa-clock-o"></i> 22 Mar 2018</div>
-						<h4>How to Start an Amazon<br>FBA Store on a Tight Budget</h4>
-					</div>
-				</div>
+			{% endfor %}				
 			</div>
 		</div>
 	</section>
@@ -371,32 +331,23 @@ postPage = "post"
 				<p>Our department  initiated a series of events</p>
 			</div>
 			<div class="row">
+
+				{% for event in post3 %}
 				<div class="col-md-6 event-item">
 					<div class="event-thumb">
-						<img src="{{'assets/img/event/1.jpg'|theme }}" alt="">
+					{% for image in event.featured_images|slice(0,1)%}
+						<img src="{{ image.path }}" alt="{{ image.path }}">
+					{% endfor %}
 						<div class="event-date">
-							<span>24 Mar 2018</span>
+							<span>{{ event.published_at|date ('d M Y')}}</span>
 						</div>
 					</div>
 					<div class="event-info">
-						<h4>The dos and don'ts of writing a personal<br>statement for languages</h4>
-						<p><i class="fa fa-calendar-o"></i> 08:00 AM - 10:00 AM <i class="fa fa-map-marker"></i> Center Building, Block A</p>
-						<a href="" class="event-readmore">REGISTER <i class="fa fa-angle-double-right"></i></a>
+						<h4>{{ event.title }}</h4>
+						<a href="{{ event.url }}" class="event-readmore">Больше <i class="fa fa-angle-double-right"></i></a>
 					</div>
 				</div>
-				<div class="col-md-6 event-item">
-					<div class="event-thumb">
-						<img src="{{'assets/img/event/2.jpg'|theme }}" alt="">
-						<div class="event-date">
-							<span>22 Mar 2018</span>
-						</div>
-					</div>
-					<div class="event-info">
-						<h4>University interview tips:<br>confidence won't make up for flannel</h4>
-						<p><i class="fa fa-calendar-o"></i> 08:00 AM - 10:00 AM <i class="fa fa-map-marker"></i> Center Building, Block A</p>
-						<a href="" class="event-readmore">REGISTER <i class="fa fa-angle-double-right"></i></a>
-					</div>
-				</div>
+				{% endfor %}
 			</div>
 		</div>
 	</section>

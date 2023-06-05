@@ -19,23 +19,24 @@ is_hidden = 0
 				<div class="contact-info-warp">
 					<div class="contact-info">
 						<h4>Address</h4>
-						<p>40 Baria Street 133/2, NewYork City, US</p>
+						<a target="_blank" href="{{this.theme.company_address_url}}"><p>{{ this.theme.company_address }}</p></a>
 					</div>
 					<div class="contact-info">
-						<h4>Phone</h4>
-						<p>(+88) 111 555 666</p>
+						<h4>Mobile Phone</h4>
+						<a href="tel:{{this.theme.company_mobile_number}}"><p>{{ this.theme.company_mobile_number }}</p></a>
 					</div>
 					<div class="contact-info">
 						<h4>Email</h4>
-						<p>infodeercreative@gmail.com</p>
+						<a href="mailto:{{this.theme.company_email}}"><p>{{this.theme.company_email}}</p></a>
 					</div>
 					<div class="contact-info">
 						<h4>Working time</h4>
-						<p>Monday - Friday: 08 AM - 06 PM</p>
+						<p>{{ this.theme.company_work_time }}</p>
 					</div>
 				</div>
 				<!-- Google map -->
-				<div class="map" id="map-canvas"></div>
+				{# <div class="map" id="map-canvas"></div> #}
+				<div class="map"><iframe src="{{ this.theme.company_google_address_url }}" width="100%%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
 			</div>
 			
 		</div>

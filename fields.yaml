@@ -63,6 +63,11 @@ tabs:
             type: text
             default: https://2gis.kz/astana/firm/70000001018111176
             span: right
+        company_google_address_url:
+            tab: Company Info 
+            label: GoogleMap Address URL
+            type: text
+            default: https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10010.77730892024!2d71.3619197!3d51.1509877!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4245865078e12aad%3A0xf0d18b1740e1ffd7!2z0J_RgNC-0YTQtdGB0YHQuNC-0L3QsNC70YzQvdC-LdGC0LXRhdC90LjRh9C10YHQutC40Lkg0LrQvtC70LvQtdC00LY!5e0!3m2!1sru!2skz!4v1685955542446!5m2!1sru!2skz
         
         company_work_number:
             tab: Company Info 
@@ -105,6 +110,30 @@ tabs:
             imageWidth: '100'
             imageHeight: '100'
             span: left
+
+        #TAB: ABOUT US
+        about_title:
+            tab: About Us
+            label: Заголовок
+            type: text
+            default: Добро пожаловать
+
+        about_subtitle:
+            tab: About Us
+            label: Подзаголовок
+            type: text
+            default: Let children creative and make a different
+
+        about_content:
+            tab: About Us
+            label: Content
+            type: markdown
+
+        about_photo:
+            tab:  About Us
+            label: Фото колледжа
+            type: mediafinder
+            mode: image
 
         # TAB: HERO        
         hero_button_text:

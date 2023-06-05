@@ -240,7 +240,7 @@ ol {
 .site-logo {
 	display: inline-block;
 	margin-right: 50px;
-	padding-top: 20px;
+	/* padding-top: 20px; */
 }
 
 .header-info {
@@ -1052,9 +1052,9 @@ ol {
 	margin-bottom: 0;
 }
 
-.footer-widget .dobule-link ul:last-child {
+/* .footer-widget .dobule-link ul:last-child {
 	margin-left: 50px;
-}
+} */
 
 .footer-widget .recent-post li {
 	margin-bottom: 25px;
