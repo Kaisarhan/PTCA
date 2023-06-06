@@ -278,6 +278,79 @@ tabs:
                         type: text
                         default: ti-crown
 
+        # TAB: Gallery
+        gallery_big1:
+            tab: Gallerey
+            label: Большая фото 1
+            type: mediafinder
+            mode: image
+            span: left
+            imageWidth: '500'
+            imageHeight: '500'
+
+        gallery_big2:
+            tab: Gallerey
+            label: Большая фото 2
+            type: mediafinder
+            mode: image
+            span: right
+            imageWidth: '500'
+            imageHeight: '500'
+        
+        gallery_average1:
+            tab: Gallerey
+            label: Средняя фото 1
+            type: mediafinder
+            mode: image
+            span: left
+            imageWidth: '300'
+            imageHeight: '300'
+
+        gallery_average2:
+            tab: Gallerey
+            label: Средняя фото 2
+            type: mediafinder
+            mode: image
+            span: right
+            imageWidth: '300'
+            imageHeight: '300'
+        
+        gallery_smal1_1:
+            tab: Gallerey
+            label: Маленькая фото 1.1
+            type: mediafinder
+            mode: image
+            span: left
+            imageWidth: '100'
+            imageHeight: '100'
+
+        gallery_smal2_1:
+            tab: Gallerey
+            label: Маленькая фото 2.1
+            type: mediafinder
+            mode: image
+            span: right
+            imageWidth: '100'
+            imageHeight: '100'
+        
+        gallery_smal1_2:
+            tab: Gallerey
+            label: Маленькая фото 1.2 
+            type: mediafinder
+            mode: image
+            span: left
+            imageWidth: '100'
+            imageHeight: '100'                
+        
+        gallery_smal2_2:
+            tab: Gallerey
+            label: Маленькая фото 2.2 
+            type: mediafinder
+            mode: image
+            span: right
+            imageWidth: '100'
+            imageHeight: '100'
+
         # TAB: SOCIAL
         social_title:
             tab: Social

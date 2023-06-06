@@ -8,7 +8,7 @@ pageNumber = "{{ :page }}"
 categoryFilter = "news"
 postsPerPage = 4
 noPostsMessage = "No posts found"
-sortOrder = "published_at desc"
+sortOrder = "created_at desc"
 categoryPage = "blog"
 postPage = "post"
 
@@ -358,30 +358,80 @@ postPage = "post"
 	<div class="gallery-section">
 		<div class="gallery">
 			<div class="grid-sizer"></div>
+			{% if (this.theme.gallery_big1)|length > 0 %}
+			<div class="gallery-item gi-big set-bg" data-setbg="{{ this.theme.gallery_big1|media }}">
+				<a class="img-popup" href="{{ this.theme.gallery_big1|media }}"><i class="ti-plus"></i></a>
+			</div>
+			{% else %}
 			<div class="gallery-item gi-big set-bg" data-setbg="{{'assets/img/gallery/1.jpg'|theme }}">
 				<a class="img-popup" href="{{'assets/img/gallery/1.jpg'|theme }}"><i class="ti-plus"></i></a>
 			</div>
-			<div class="gallery-item set-bg" data-setbg="{{'assets/img/gallery/1.jpg'|theme }}">
-				<a class="img-popup" href="{{'assets/img/gallery/1.jpg'|theme }}"><i class="ti-plus"></i></a>
+			{% endif %}
+
+			{% if (this.theme.gallery_smal1_1)|length > 0 %}
+			<div class="gallery-item set-bg" data-setbg="{{ this.theme.gallery_smal1_1|media }}">
+				<a class="img-popup" href="{{ this.theme.gallery_smal1_1|media }}"><i class="ti-plus"></i></a>
 			</div>
+			{% else %}
+			<div class="gallery-item set-bg" data-setbg="{{'assets/img/gallery/2.jpg'|theme }}">
+				<a class="img-popup" href="{{'assets/img/gallery/2.jpg'|theme }}"><i class="ti-plus"></i></a>
+			</div>
+			{% endif %}
+
+			{% if (this.theme.gallery_smal1_2)|length > 0 %}
+			<div class="gallery-item set-bg" data-setbg="{{ this.theme.gallery_smal1_2|media }}">
+				<a class="img-popup" href="{{ this.theme.gallery_smal1_2|media }}"><i class="ti-plus"></i></a>
+			</div>
+			{% else %}
 			<div class="gallery-item set-bg" data-setbg="{{'assets/img/gallery/3.jpg'|theme }}">
 				<a class="img-popup" href="{{'assets/img/gallery/3.jpg'|theme }}"><i class="ti-plus"></i></a>
 			</div>
+			{% endif %}
+			{% if (this.theme.gallery_average2|length > 0 ) %}
+			<div class="gallery-item gi-long set-bg" data-setbg="{{ this.theme.gallery_average2|media }}">
+				<a class="img-popup" href="{{ this.theme.gallery_average2|media }}"><i class="ti-plus"></i></a>
+			</div>
+			{% else %}
 			<div class="gallery-item gi-long set-bg" data-setbg="{{'assets/img/gallery/5.jpg'|theme }}">
 				<a class="img-popup" href="{{'assets/img/gallery/5.jpg'|theme }}"><i class="ti-plus"></i></a>
 			</div>
+			{% endif %}
+			{% if ( this.theme.gallery_big2|length > 0 ) %}
+			<div class="gallery-item gi-big set-bg" data-setbg="{{ this.theme.gallery_big2|media }}">
+				<a class="img-popup" href="{{ this.theme.gallery_big2|media }}"><i class="ti-plus"></i></a>
+			</div>
+			{% else %}
 			<div class="gallery-item gi-big set-bg" data-setbg="{{'assets/img/gallery/8.jpg'|theme }}">
 				<a class="img-popup" href="{{'assets/img/gallery/8.jpg'|theme }}"><i class="ti-plus"></i></a>
 			</div>
+			{% endif %}
+			{% if ( this.theme.gallery_average1|length > 0 ) %}
+			<div class="gallery-item gi-long set-bg" data-setbg="{{ this.theme.gallery_average1|media }}">
+				<a class="img-popup" href="{{ this.theme.gallery_average1|media }}"><i class="ti-plus"></i></a>
+			</div>
+			{% else %}
 			<div class="gallery-item gi-long set-bg" data-setbg="{{'assets/img/gallery/4.jpg'|theme }}">
 				<a class="img-popup" href="{{'assets/img/gallery/4.jpg'|theme }}"><i class="ti-plus"></i></a>
 			</div>
+			{% endif %}
+			{% if (this.theme.gallery_smal2_1|length > 0 ) %}
+			<div class="gallery-item set-bg" data-setbg="{{ this.theme.gallery_smal2_1|media }}">
+				<a class="img-popup" href="{{ this.theme.gallery_smal2_1|media }}"><i class="ti-plus"></i></a>
+			</div>
+			{% else %}
 			<div class="gallery-item set-bg" data-setbg="{{'assets/img/gallery/6.jpg'|theme }}">
 				<a class="img-popup" href="{{'assets/img/gallery/6.jpg'|theme }}"><i class="ti-plus"></i></a>
 			</div>
+			{% endif %}
+			{% if ( this.theme.gallery_smal2_2|length > 0 ) %}
+			<div class="gallery-item set-bg" data-setbg="{{ this.theme.gallery_smal2_2|media }}">
+				<a class="img-popup" href="{{ this.theme.gallery_smal2_2|media }}"><i class="ti-plus"></i></a>
+			</div>
+			{% else %}
 			<div class="gallery-item set-bg" data-setbg="{{'assets/img/gallery/7.jpg'|theme }}">
 				<a class="img-popup" href="{{'assets/img/gallery/7.jpg'|theme }}"><i class="ti-plus"></i></a>
 			</div>
+			{% endif %}
 		</div>
 	</div>
 	<!-- Gallery section -->
@@ -396,8 +446,10 @@ postPage = "post"
 			</div>
 			<div class="row">
 {% for post in posts %}
+				
 				<div class="col-xl-6">
 					<div class="blog-item">
+					<a href="{{ post.url }}">
 					{% for image in post.featured_images|slice(0,1)%}
 						<div class="blog-thumb set-bg" data-setbg="{{ image.path }}"></div>
 					{% endfor %}
@@ -409,8 +461,10 @@ postPage = "post"
 							</div>
 							<p>{{post.excerpt}}</p>
 						</div>
+					</a>
 					</div>
 				</div>
+				
 {% endfor %}
 			</div>
 		</div>
