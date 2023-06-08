@@ -26,12 +26,7 @@ categoryPage = "blog"
 {% set categ = blogCategories %}
 
 	<!-- Breadcrumb section -->
-	<div class="site-breadcrumb">
-		<div class="container">
-			<a href="{{ 'home'|page }}"><i class="fa fa-home"></i> {{'Главное'|_ }}</a> <i class="fa fa-angle-right"></i>
-			<span>{{this.page.title}}</span>
-		</div>
-	</div>
+	{% partial 'elements/breadcrumb' %}
 	<!-- Breadcrumb section end -->
 
 	<!-- Blog page section  -->

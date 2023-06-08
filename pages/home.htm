@@ -43,10 +43,10 @@ postPage = "post"
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-8">
-								<div class="hs-subtitle">{{ slide.subtitle }}</div>
-								<h2 class="hs-title">{{ slide.title }}</h2>
-								<p class="hs-des">{{ slide.description }}</p>
-								<a href="{{ this.theme.hero_button_url }}"><div class="site-btn">{{ this.theme.hero_button_text }}</div></a>
+								<div class="hs-subtitle">{{ slide.subtitle|_ }}</div>
+								<h2 class="hs-title">{{ slide.title|_ }}</h2>
+								<p class="hs-des">{{ slide.description|_ }}</p>
+								<a href="{{ this.theme.hero_button_url }}"><div class="site-btn">{{ this.theme.hero_button_text|_ }}</div></a>
 							</div>
 						</div>
 					</div>
@@ -109,8 +109,8 @@ postPage = "post"
 	<section class="service-section spad">
 		<div class="container services">
 			<div class="section-title text-center">
-				<h3>{{this.theme.service_title}}</h3>
-				<p>{{this.theme.service_subtitle}}</p>
+				<h3>{{this.theme.service_title|_ }}</h3>
+				<p>{{this.theme.service_subtitle|_ }}</p>
 			</div>
 			<div class="row">
 			{% if (this.theme.services|length > 0)%}
@@ -120,8 +120,8 @@ postPage = "post"
 						<img src="{{ service.image|media }}" alt="{{ service.title }}">
 					</div>
 					<div class="service-content">
-						<h4>{{ service.title }}</h4>
-						<p>{{ service.description }}</p>
+						<h4>{{ service.title|_ }}</h4>
+						<p>{{ service.description|_ }}</p>
 					</div>
 				</div>
 			{% endfor %}
@@ -192,16 +192,16 @@ postPage = "post"
 			<div class="row">
 				<div class="col-lg-5">
 					<div class="section-title text-white">
-						<h3>{{ this.theme.enroll_title }}</h3>
-						<p>{{ this.theme.enroll_subtitle}}</p>
+						<h3>{{ this.theme.enroll_title|_ }}</h3>
+						<p>{{ this.theme.enroll_subtitle|_ }}</p>
 					</div>
 					<div class="enroll-list text-white">
 					{% if (this.theme.enroll|length > 0)%}
 					{% for item in this.theme.enroll %}
 						<div class="enroll-list-item">
 							<span>{{loop.index}}</span>
-							<h5>{{ item.name }}</h5>
-							<p>{{ item.description }}</p>
+							<h5>{{ item.name|_ }}</h5>
+							<p>{{ item.description|_ }}</p>
 						</div>
 					{% endfor %}
 					{% else %}
@@ -224,7 +224,7 @@ postPage = "post"
 					</div>
 				</div>
 				<div class="col-lg-6 offset-lg-1 p-lg-0 p-4">
-					<img src="{% if (this.theme.enroll_image|length > 0 )%} {{this.theme.enroll_image|media}} {% else %}{{'assets/img/encroll-img.jpg'|theme }} {% endif %}" alt="">
+					<img src="{% if (this.theme.enroll_image|length > 0 )%} {{this.theme.enroll_image|media}} {% else %}{{'assets/img/encroll-img.jpg'|theme }} {% endif %}" alt="decore">
 				</div>
 			</div>
 		</div>
@@ -274,7 +274,7 @@ postPage = "post"
 					</div>
 					<div class="fact-text">
 						<h2>{{ item.quantity }}</h2>
-						<p>{{ item.title }}</p>
+						<p>{{ item.title|_ }}</p>
 					</div>
 				</div>
 			{% endfor %}

@@ -6,12 +6,7 @@ is_hidden = 0
 
 
 	<!-- Breadcrumb section -->
-	<div class="site-breadcrumb">
-		<div class="container">
-			<a href="{{ 'home'|page }}"><i class="fa fa-home"></i> Home</a> <i class="fa fa-angle-right"></i>
-			<span>{{this.page.title}}</span>
-		</div>
-	</div>
+	{% partial 'elements/breadcrumb' %}
 	<!-- Breadcrumb section end -->
 	<!-- About section -->
 	<section class="about-section spad pt-0">
