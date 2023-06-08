@@ -88,7 +88,7 @@ postPage = "post"
 	<!-- Hero section end -->
 
 	<!-- Counter section  -->
-	<section class="counter-section">
+{# 	<section class="counter-section">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-7 col-md-6">
@@ -102,7 +102,7 @@ postPage = "post"
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> #}
 	<!-- Counter section end -->
 
 	<!-- Services section -->
@@ -235,8 +235,8 @@ postPage = "post"
 	<section class="courses-section spad">
 		<div class="container">
 			<div class="section-title text-center">
-				<h3>OUR COURSES</h3>
-				<p>Building a better world, one course at a time</p>
+				<h3>{{'Наши курсы'|_ }}</h3>
+				<p>{{'Описание наших курсов'|_ }}</p>
 			</div>
 			<div class="row">
 			{% for curse in post2 %}
@@ -261,7 +261,6 @@ postPage = "post"
 		</div>
 	</section>
 	<!-- Courses section end-->
-
 
 	<!-- Fact section -->
 	<section class="fact-section spad set-bg" data-setbg="{% if (this.theme.facts_bgimage|length > 0 ) %}{{ this.theme.facts_bgimage|media}} {% else %}{{'assets/img/fact-bg.jpg'|theme }} {% endif %}">
@@ -327,32 +326,30 @@ postPage = "post"
 	<section class="event-section spad">
 		<div class="container">
 			<div class="section-title text-center">
-				<h3>OUR EVENTS</h3>
-				<p>Our department  initiated a series of events</p>
+				<h3>{{'События'|_ }}</h3>
+				<p>{{'Описание наших события'|_ }}</p>
 			</div>
 			<div class="row">
-
 				{% for event in post3 %}
-				<div class="col-md-6 event-item">
-					<div class="event-thumb">
-					{% for image in event.featured_images|slice(0,1)%}
-						<img src="{{ image.path }}" alt="{{ image.path }}">
-					{% endfor %}
-						<div class="event-date">
-							<span>{{ event.published_at|date ('d M Y')}}</span>
+					<div class="col-md-6 event-item">
+						<div class="event-thumb">
+						{% for image in event.featured_images|slice(0,1)%}
+							<img src="{{ image.path }}" alt="{{ image.path }}">
+						{% endfor %}
+							<div class="event-date">
+								<span>{{ event.published_at|date ('d M Y')}}</span>
+							</div>
+						</div>
+						<div class="event-info">
+							<h4>{{ event.title }}</h4>
+							<a href="{{ event.url }}" class="event-readmore">{{'Больше'|_ }} <i class="fa fa-angle-double-right"></i></a>
 						</div>
 					</div>
-					<div class="event-info">
-						<h4>{{ event.title }}</h4>
-						<a href="{{ event.url }}" class="event-readmore">Больше <i class="fa fa-angle-double-right"></i></a>
-					</div>
-				</div>
 				{% endfor %}
 			</div>
 		</div>
 	</section>
 	<!-- Event section end -->
-
 
 	<!-- Gallery section -->
 	<div class="gallery-section">
@@ -436,17 +433,15 @@ postPage = "post"
 	</div>
 	<!-- Gallery section -->
 
-
 	<!-- Blog section -->
 	<section class="blog-section spad">
 		<div class="container">
 			<div class="section-title text-center">
-				<h3>LATEST NEWS</h3>
-				<p>Get latest breaking news & top stories today</p>
+				<h3>{{'Последние новости'|_ }}</h3>
+				<p>{{'Описание последних новостей'|_ }}</p>
 			</div>
 			<div class="row">
-{% for post in posts %}
-				
+			{% for post in posts %}				
 				<div class="col-xl-6">
 					<div class="blog-item">
 					<a href="{{ post.url }}">
@@ -463,9 +458,8 @@ postPage = "post"
 						</div>
 					</a>
 					</div>
-				</div>
-				
-{% endfor %}
+				</div>				
+			{% endfor %}
 			</div>
 		</div>
 	</section>

@@ -33,19 +33,19 @@ postPage = "post"
 				</div>
 				<!-- widget -->
 				<div class="col-sm-6 col-lg-3 footer-widget">
-					<h6 class="fw-title">USEFUL LINK</h6>
+					<h6 class="fw-title">{{'Меню'|_ }}</h6>
 					<div class="dobule-link">
 						<ul>
-							<li><a href="{{ 'home'|page }}">Home</a></li>
-							<li><a href="{{ 'about'|page }}">About us</a></li>
-							<li><a href="{{ 'blog'|page }}">Blog</a></li>
-							<li><a href="{{ 'contact'|page }}">Contacts</a></li>
+							<li><a href="{{ 'home'|page }}">{{'Главная'|_ }}</a></li>
+							<li><a href="{{ 'about'|page }}">{{'О нас'|_ }}</a></li>
+							<li><a href="{{ 'blog'|page }}">{{'Блог'|_ }}</a></li>
+							<li><a href="{{ 'contact'|page }}">{{'Контакты'|_ }}</a></li>
 						</ul>
 					</div>
 				</div>
 				<!-- widget -->
 				<div class="col-sm-6 col-lg-3 footer-widget">
-					<h6 class="fw-title">RECENT POST</h6>
+					<h6 class="fw-title">{{'Новости'|_ }}</h6>
 					<ul class="recent-post">
 					{% for recent in posts %}
 						<li>
@@ -57,7 +57,7 @@ postPage = "post"
 				</div>
 				<!-- widget -->
 				<div class="col-sm-6 col-lg-3 footer-widget">
-					<h6 class="fw-title">CONTACT</h6>
+					<h6 class="fw-title">{{'Наши контакты'|_ }}</h6>
 					<ul class="contact">
 						<a target="_blank" href="{{this.theme.company_address_url}}"><li><p><i class="fa fa-map-marker"></i> {{this.theme.company_address}}</p></li></a>
 						<a href="tel:{{this.theme.company_work_number}}"><li><p><i class="fa fa-phone"></i> {{this.theme.company_work_number}}</p></li></a>		

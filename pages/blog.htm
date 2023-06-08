@@ -47,33 +47,6 @@ categoryPage = "blog"
 						</div>
 					</div>
                 {% endfor %}
-{# 					<ul class="site-pageination">
-						<li><a href="#" class="active">1</a></li>
-						<li><a href="#">2</a></li>
-						<li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-					</ul>
-					
-					
-										{% if posts.lastPage > 1 %}
-					    <ul class="pagination">
-					        {% if posts.currentPage > 1 %}
-					            <li><a href="{{ this.page.baseFileName | page({ (blogPosts.pageParam): (posts.currentPage-1) }) }}">&larr; Prev</a></li>
-					        {% endif %}
-
-					        {% for page in 1..posts.lastPage %}
-					            <li class="{{ posts.currentPage == page ? 'active' : null }}">
-					                <a href="{{ this.page.baseFileName | page({ (blogPosts.pageParam): page }) }}">{{ page }}</a>
-					            </li>
-					        {% endfor %}
-
-					        {% if posts.lastPage > posts.currentPage %}
-					            <li><a href="{{ this.page.baseFileName | page({ (blogPosts.pageParam): (posts.currentPage+1) }) }}">Next &rarr;</a></li>
-					        {% endif %}
-					    </ul>
-					{% endif %}
-					 #}
-					
-						{#custom pagination#}
 
 					{% if posts.lastPage > 1 %}
 					    <ul class="site-pageination">
@@ -112,10 +85,6 @@ categoryPage = "blog"
 						{% endif %}
 						{#categori list end#}
 					</div>
-					<!-- widget -->
-<!-- 					<div class="widget">
-						<img src="img/ad.jpg" alt="">
-					</div> -->
 				</div>
 			</div>
 		</div>

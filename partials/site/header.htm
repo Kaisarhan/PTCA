@@ -1,10 +1,13 @@
+[localePicker]
+forceUrl = 0
 ==
+<?php
 function onStart()
 {
     $this['backendUrl'] = Backend::url('/');
 }
+?>
 ==
-
 <!-- header section -->
 	<header class="header-section">
 		<div class="container">
@@ -16,12 +19,12 @@ function onStart()
 			<div class="header-info">
 				<div class="hf-item">
 					<i class="fa fa-clock-o"></i>
-					<p><span>Working time:</span>{{ this.theme.company_work_time}}</p>
+					<p><span>Рабочее время:</span>{{ this.theme.company_work_time}}</p>
 				</div>
 				<div class="hf-item">
 					<a target="_blank" href="{{this.theme.company_address_url}}">
 						<i class="fa fa-map-marker"></i>
-						<p><span>Find us:</span>{{this.theme.company_address}}</p>
+						<p><span>Наш адрес:</span>{{this.theme.company_address}}</p>
 					</a>
 				</div>
 			</div>
@@ -31,41 +34,15 @@ function onStart()
 	<!-- Header section  -->
 	<nav class="nav-section">
 		<div class="container">
-			{# <div class="nav-right">
-				<a href=""><i class="fa fa-search"></i></a>
-			</div> #}
+			<div class="nav-right">
+				{% component 'localePicker' %}
+			</div>
 			<ul class="main-menu">
-				<li class="{% if this.page.id == 'home' %}active{% endif %}"><a href="{{ 'home'|page }}">Home</a></li>
-				<li class="{% if this.page.id == 'about' %}active{% endif %}"><a href="{{ 'about'|page }}">About us</a></li>
-{# 				<li><a href="#">Event</a></li>
-				<li><a href="course.html">COURSES</a></li> #}
-				<li class="{% if this.page.id == 'blog' %}active{% endif %}"><a href="{{ 'blog'|page }}">blog</a></li>
-				<li class="{% if this.page.id == 'contact' %}active{% endif %}"><a href="{{ 'contact'|page }}">contact</a></li>
+				<li class="{% if this.page.id == 'home' %}active{% endif %}"><a href="{{ 'home'|page }}">{{ 'Главная'|_ }}</a></li>
+				<li class="{% if this.page.id == 'about' %}active{% endif %}"><a href="{{ 'about'|page }}">{{ 'О нас'|_ }}</a></li>
+				<li class="{% if this.page.id == 'blog' %}active{% endif %}"><a href="{{ 'blog'|page }}">{{ 'Блог'|_ }}</a></li>
+				<li class="{% if this.page.id == 'contact' %}active{% endif %}"><a href="{{ 'contact'|page }}">{{ 'Контакты'|_ }}</a></li>
 			</ul>
 		</div>
 	</nav>
 	<!-- Header section end -->
-
-<!-- Nav -->
-{# <nav id="layout-nav" class="navbar navbar-inverse navbar-fixed-top navbar-autohide" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="{{ 'home'|page }}">Winter Demo</a>
-        </div>
-        <div class="collapse navbar-collapse navbar-main-collapse">
-            <ul class="nav navbar-nav">
-                <li class="separator hidden-xs"></li>
-                <li class="{% if this.page.id == 'home' %}active{% endif %}"><a href="{{ 'home'|page }}">Basic concepts</a></li>
-                <li class="{% if this.page.id == 'ajax' %}active{% endif %}"><a href="{{ 'ajax'|page }}">AJAX framework</a></li>
-                <li class="{% if this.page.id == 'plugins' %}active{% endif %}"><a href="{{ 'plugins'|page }}">Plugin components</a></li>
-                <li><a href="{{ backendUrl }}">Sign in to the Backend</a></li>
-            </ul>
-        </div>
-    </div>
-</nav> #}

@@ -1,4 +1,7 @@
 description = "Default layout"
+
+[localePicker]
+forceUrl = 0
 ==
 <!DOCTYPE html>
 <html>
@@ -10,7 +13,7 @@ description = "Default layout"
         <meta name="author" content="Winter CMS">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="generator" content="Winter CMS">
-        <link rel="icon" type="image/png" href="{{ 'assets/rec/images/winter.png'|theme }}">
+        <link rel="icon" type="image/png" href="{{ 'assets/images/winter.png'|theme }}">
         	<!-- Google Fonts -->
 	    <link href="https://fonts.googleapis.com/css?family=Rubik:400,400i,500,500i,700,700i" rel="stylesheet">
         	<!-- Stylesheets -->
@@ -27,9 +30,6 @@ description = "Default layout"
         --theme-color-two: {{ this.theme.link_color_two }}
     }
 </style>
-
-{#         <link href="{{ 'assets/rec/css/vendor.css'|theme }}" rel="stylesheet">
-        <link href="{{ 'assets/rec/css/theme.css'|theme }}" rel="stylesheet"> #}
         {% styles %}
     </head>
     <body>
@@ -47,10 +47,6 @@ description = "Default layout"
         {% partial 'site/footer' %}
 
         <!-- Scripts -->
-{#         <script src="{{ 'assets/rec/vendor/jquery.js'|theme }}"></script>
-        <script src="{{ 'assets/rec/vendor/bootstrap.js'|theme }}"></script>
-        <script src="{{ 'assets/rec/javascript/app.js'|theme }}"></script> #}
-
         	<!--====== Javascripts & Jquery ======-->
 	    <script src="{{ 'assets/js/jquery-3.2.1.min.js'|theme }}"></script>
 	    <script src="{{ 'assets/js/owl.carousel.min.js'|theme }}"></script>
