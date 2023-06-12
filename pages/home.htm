@@ -32,6 +32,7 @@ postPage = "post"
 ==
 {% set posts = blogPosts.posts %}
 {% set post2 = blogPosts2.posts %}
+{% set post2Cat = blogPosts2.category %}
 {% set post3 = blogPosts3.posts %}
 <!-- Hero section -->
 	<section class="hero-section">
@@ -88,7 +89,8 @@ postPage = "post"
 	<!-- Hero section end -->
 
 	<!-- Counter section  -->
-{# 	<section class="counter-section">
+	{# 	
+	<section class="counter-section">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-7 col-md-6">
@@ -102,7 +104,8 @@ postPage = "post"
 				</div>
 			</div>
 		</div>
-	</section> #}
+	</section> 
+	#}
 	<!-- Counter section end -->
 
 	<!-- Services section -->
@@ -234,9 +237,10 @@ postPage = "post"
 	<!-- Courses section -->
 	<section class="courses-section spad">
 		<div class="container">
-			<div class="section-title text-center">
-				<h3>{{'Наши курсы'|_ }}</h3>
-				<p>{{'Описание наших курсов'|_ }}</p>
+			<div class="section-title text-center">			
+			{{dump(blogPosts2)}}
+				<h3>{# {{'Наши курсы'|_ }} #} {{ post2Cat.original.name }}</h3>
+				<p>{# {{'Описание наших курсов'|_ }} #} {{ post2Cat.original.description }}</p>
 			</div>
 			<div class="row">
 			{% for curse in post2 %}

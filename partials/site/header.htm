@@ -12,19 +12,19 @@ function onStart()
 	<header class="header-section">
 		<div class="container">
 			<!-- logo -->
-			<a href="{{ 'home'|page }}" class="site-logo"><img src="{% if (this.theme.company_logo|length > 0)%}{{this.theme.company_logo|media}} {% else %}{{'assets/img/ptk-logo.jpeg'|theme }} {% endif %}" alt="logo"></a>
+			<a href="{{ 'home'|page }}" class="site-logo"><img src="{% if (this.theme.company_logo|length > 0)%}{{this.theme.company_logo|media}} {% else %}{{'assets/img/ptk-logo.png'|theme }} {% endif %}" alt="logo"></a>
 			<div class="nav-switch">
 				<i class="fa fa-bars"></i>
 			</div>
 			<div class="header-info">
 				<div class="hf-item">
 					<i class="fa fa-clock-o"></i>
-					<p><span>Рабочее время:</span>{{ this.theme.company_work_time|_ }}</p>
+					<p><span>{{ 'Рабочее время'|_ }}:</span>{{ this.theme.company_work_time|_ }}</p>
 				</div>
 				<div class="hf-item">
 					<a target="_blank" href="{{this.theme.company_address_url}}">
 						<i class="fa fa-map-marker"></i>
-						<p><span>Наш адрес:</span>{{this.theme.company_address}}</p>
+						<p><span>{{ 'Наш адрес'|_ }}:</span>{{this.theme.company_address}}</p>
 					</a>
 				</div>
 			</div>

@@ -240,6 +240,8 @@ ol {
 .site-logo {
 	display: inline-block;
 	margin-right: 50px;
+	max-width: 56px;
+	max-height: 80px;
 	/* padding-top: 20px; */
 }
 
