@@ -47,7 +47,7 @@ postPage = "post"
 								<div class="hs-subtitle">{{ slide.subtitle|_ }}</div>
 								<h2 class="hs-title">{{ slide.title|_ }}</h2>
 								<p class="hs-des">{{ slide.description|_ }}</p>
-								<a href="{{ this.theme.hero_button_url }}"><div class="site-btn">{{ this.theme.hero_button_text|_ }}</div></a>
+								<a href="{{ this.theme.hero_button_url }}"><div class="site-btn">{{ this.theme.hero_button_text }}</div></a>
 							</div>
 						</div>
 					</div>
@@ -112,8 +112,8 @@ postPage = "post"
 	<section class="service-section spad">
 		<div class="container services">
 			<div class="section-title text-center">
-				<h3>{{this.theme.service_title|_ }}</h3>
-				<p>{{this.theme.service_subtitle|_ }}</p>
+				<h3>{{this.theme.service_title }}</h3>
+				<p>{{this.theme.service_subtitle }}</p>
 			</div>
 			<div class="row">
 			{% if (this.theme.services|length > 0)%}
@@ -123,8 +123,8 @@ postPage = "post"
 						<img src="{{ service.image|media }}" alt="{{ service.title }}">
 					</div>
 					<div class="service-content">
-						<h4>{{ service.title|_ }}</h4>
-						<p>{{ service.description|_ }}</p>
+						<h4>{{ service.title }}</h4>
+						<p>{{ service.description }}</p>
 					</div>
 				</div>
 			{% endfor %}
@@ -195,16 +195,16 @@ postPage = "post"
 			<div class="row">
 				<div class="col-lg-5">
 					<div class="section-title text-white">
-						<h3>{{ this.theme.enroll_title|_ }}</h3>
-						<p>{{ this.theme.enroll_subtitle|_ }}</p>
+						<h3>{{ this.theme.enroll_title }}</h3>
+						<p>{{ this.theme.enroll_subtitle }}</p>
 					</div>
 					<div class="enroll-list text-white">
 					{% if (this.theme.enroll|length > 0)%}
 					{% for item in this.theme.enroll %}
 						<div class="enroll-list-item">
 							<span>{{loop.index}}</span>
-							<h5>{{ item.name|_ }}</h5>
-							<p>{{ item.description|_ }}</p>
+							<h5>{{ item.name }}</h5>
+							<p>{{ item.description }}</p>
 						</div>
 					{% endfor %}
 					{% else %}
@@ -277,7 +277,7 @@ postPage = "post"
 					</div>
 					<div class="fact-text">
 						<h2>{{ item.quantity }}</h2>
-						<p>{{ item.title|_ }}</p>
+						<p>{{ item.title }}</p>
 					</div>
 				</div>
 			{% endfor %}

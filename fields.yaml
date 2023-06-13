@@ -83,6 +83,7 @@ tabs:
             label: График работы
             type: text
             default: "Monday - Friday: 08 AM - 06 PM"
+            translatable: true
             span: left  
 
         company_email:
@@ -96,6 +97,7 @@ tabs:
             tab: Company Info 
             label: Описание под лого
             type: textarea
+            translatable: true
 
         company_logo:
             tab: Company Info 
@@ -112,17 +114,20 @@ tabs:
             label: Заголовок
             type: text
             default: Добро пожаловать
+            translatable: true
 
         about_subtitle:
             tab: About Us
             label: Подзаголовок
             type: text
             default: Let children creative and make a different
+            translatable: true
 
         about_content:
             tab: About Us
             label: Content
             type: markdown
+            translatable: true
 
         about_photo:
             tab:  About Us
@@ -136,6 +141,7 @@ tabs:
             label: Button Text
             type: text
             default: Know more
+            translatable: true
             span: left
 
         hero_button_url:
@@ -148,6 +154,7 @@ tabs:
             tab: Hero
             label: Hero Slide
             type: repeater
+            translatable: true
             form:
                 fields:
                     title:
@@ -175,12 +182,15 @@ tabs:
             label: Title 
             type: text 
             default: Services
+            translatable: true
             span: left
+
         service_subtitle:
             tab: Services 
             label: SubTitle 
             type: text 
             default: Subtitle Services
+            translatable: true
             span: right
         
         services:
@@ -189,6 +199,7 @@ tabs:
             titleFrom: title
             prompt: Add new service
             type: repeater
+            translatable: true
             form:
                 fields:
                     title:
@@ -210,19 +221,24 @@ tabs:
             label: Title 
             type: text 
             default: Enroll
+            translatable: true
             span: left
+
         enroll_subtitle:
             tab: Enroll
             label: SubTitle 
             type: text 
             default: Subtitle Enroll
+            translatable: true
             span: right
+
         enroll_bgimage:
             tab: Enroll
             label: Заднее фото
             type: mediafinder
             mode: image
             span: left
+
         enroll_image:
             tab: Enroll
             label: Основное фото
@@ -236,6 +252,7 @@ tabs:
             titleFrom: title
             prompt: Add new service
             type: repeater
+            translatable: true
             form:
                 fields:
                     name:
@@ -261,6 +278,7 @@ tabs:
             titleFrom: title
             prompt: Add new facts
             type: repeater
+            translatable: true
             form:
                 fields:
                     quantity:
