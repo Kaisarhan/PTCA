@@ -29,12 +29,18 @@ noPostsMessage = "No posts found"
 sortOrder = "published_at desc"
 categoryPage = "blog"
 postPage = "post"
-==
+== 
+{# function onEnd()
+{
+    // Optional - set the page title to the category name
+        $this->page->title = $this->category->name;
+}
+== #}
 {% set posts = blogPosts.posts %}
 {% set post2 = blogPosts2.posts %}
 {% set post2Cat = blogPosts2.category %}
 {% set post3 = blogPosts3.posts %}
-<!-- Hero section -->
+	<!-- Hero section -->
 	<section class="hero-section">
 		<div class="hero-slider owl-carousel">
 		{% if (this.theme.hero_image|length > 0)%}
@@ -238,10 +244,9 @@ postPage = "post"
 	<section class="courses-section spad">
 		<div class="container">
 			<div class="section-title text-center">			
-			{{dump(blogPosts2)}}
-				<h3>{# {{'Наши курсы'|_ }} #} {{ post2Cat.original.name }}</h3>
-				<p>{# {{'Описание наших курсов'|_ }} #} {{ post2Cat.original.description }}</p>
-			</div>
+				<h3>{{ blogPosts2.category.name }}</h3>
+				<p>{{ blogPosts2.category.description }}</p>
+			</div>			
 			<div class="row">
 			{% for curse in post2 %}
 				<!-- course item -->
@@ -330,8 +335,8 @@ postPage = "post"
 	<section class="event-section spad">
 		<div class="container">
 			<div class="section-title text-center">
-				<h3>{{'События'|_ }}</h3>
-				<p>{{'Описание наших события'|_ }}</p>
+				<h3>{{ blogPosts3.category.name }}</h3>
+				<p>{{ blogPosts3.category.description }}</p>
 			</div>
 			<div class="row">
 				{% for event in post3 %}
@@ -441,8 +446,8 @@ postPage = "post"
 	<section class="blog-section spad">
 		<div class="container">
 			<div class="section-title text-center">
-				<h3>{{'Последние новости'|_ }}</h3>
-				<p>{{'Описание последних новостей'|_ }}</p>
+				<h3>{{ blogPosts.category.name }}</h3>
+				<p>{{ blogPosts.category.description }}</p>
 			</div>
 			<div class="row">
 			{% for post in posts %}				
