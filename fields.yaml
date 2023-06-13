@@ -39,25 +39,20 @@ tabs:
             default: "#f6783a"
 
         # TAB: COMPANY INFO
-        company_contact_title:
-            tab: Company Info
-            label: Title
-            type: text
-            default: Contact Info
-
         company_address:
             tab: Company Info 
-            label: Address
+            label: Адрес
             type: text
-            default: Your company address
+            default: Укажите ваш адрес в backend-е
             span: left
 
         company_address_url:
             tab: Company Info 
-            label: Address URL
+            label: Адрес URL
             type: text
             default: https://2gis.kz/astana/firm/70000001018111176
             span: right
+
         company_google_address_url:
             tab: Company Info 
             label: GoogleMap Address URL
@@ -82,7 +77,7 @@ tabs:
             tab: Company Info 
             label: График работы
             type: text
-            default: "Monday - Friday: 08 AM - 06 PM"
+            default: "Пн - Пт: с 09:00 - по 18:00"
             translatable: true
             span: left  
 
@@ -120,12 +115,12 @@ tabs:
             tab: About Us
             label: Подзаголовок
             type: text
-            default: Let children creative and make a different
+            default: Описание подзаголовка 
             translatable: true
 
         about_content:
             tab: About Us
-            label: Content
+            label: Контент
             type: markdown
             translatable: true
 
@@ -138,21 +133,21 @@ tabs:
         # TAB: HERO        
         hero_button_text:
             tab: Hero
-            label: Button Text
+            label: Кнопка для ссылки
             type: text
-            default: Know more
+            default: Кнопка
             translatable: true
             span: left
 
         hero_button_url:
             tab: Hero
-            label: Button URL
+            label: URL Вашей кнопки
             type: text
             span: right
         
         hero_image:
             tab: Hero
-            label: Hero Slide
+            label: Ваши слайды
             type: repeater
             translatable: true
             form:
@@ -172,63 +167,63 @@ tabs:
                         type: textarea
                         default: Какоето описание 
                     image:
-                        label: Image
+                        label: Фоновая картинка
                         type: mediafinder
                         mode: image
 
         # TAB: SERVICES
         service_title:
             tab: Services 
-            label: Title 
+            label: Заголовок 
             type: text 
-            default: Services
+            default: Сервисы
             translatable: true
             span: left
 
         service_subtitle:
             tab: Services 
-            label: SubTitle 
+            label: Подзаголовок
             type: text 
-            default: Subtitle Services
+            default: Описание Сервиса
             translatable: true
             span: right
         
         services:
             tab: Services
-            label: Services 
+            label: Сервисы
             titleFrom: title
-            prompt: Add new service
+            prompt: Добавить сервис
             type: repeater
             translatable: true
             form:
                 fields:
                     title:
-                        label: Name
+                        label: Название сервиса
                         type: text
                     image:
-                        label: Image
+                        label: Иконка
                         type: mediafinder
                         mode: image
                         span: left
                     description:
-                        label: Description
+                        label: Описание
                         type: textarea
                         span: right
 
          # TAB: ENROLL
         enroll_title:
             tab: Enroll
-            label: Title 
+            label: Заголовок 
             type: text 
-            default: Enroll
+            default: Шаги
             translatable: true
             span: left
 
         enroll_subtitle:
             tab: Enroll
-            label: SubTitle 
+            label: Подзаголовок
             type: text 
-            default: Subtitle Enroll
+            default: Описание шагов
             translatable: true
             span: right
 
@@ -250,21 +245,21 @@ tabs:
             tab: Enroll
             label: Enroll
             titleFrom: title
-            prompt: Add new service
+            prompt: Добавить шаг
             type: repeater
             translatable: true
             form:
                 fields:
                     name:
-                        label: Title
+                        label: Шаг
                         type: text
                         span: left
-                        default: You title
+                        default: Название шага
                     description:
-                        label: Description
+                        label: Описание
                         type: text
                         span: right
-                        default: You Description
+                        default: Описание шага
 
         # TAB: FACTS
         facts_bgimage:
@@ -276,7 +271,7 @@ tabs:
             tab: Facts
             label: Факты
             titleFrom: title
-            prompt: Add new facts
+            prompt: Добавить факты
             type: repeater
             translatable: true
             form:
@@ -287,12 +282,12 @@ tabs:
                         span: left
                         default: 50
                     title:
-                        label: Title
+                        label: Название
                         type: text
                         span: right
                         default: Лет
                     icon:
-                        label: Icons
+                        label: Исконка. Все иконки можете взять https://fontawesome.com/v4/icons/
                         type: text
                         default: ti-crown
 
@@ -370,12 +365,6 @@ tabs:
             imageHeight: '100'
 
         # TAB: SOCIAL
-        social_title:
-            tab: Social
-            label: Title
-            type: text
-            default: Follow us
-
         social_facebook:
             tab: Social
             label: Facebook URL

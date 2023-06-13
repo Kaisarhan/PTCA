@@ -1,4 +1,4 @@
-title = "Home"
+title = "Главное"
 url = "/"
 layout = "default"
 is_hidden = 0
@@ -29,7 +29,14 @@ noPostsMessage = "No posts found"
 sortOrder = "published_at desc"
 categoryPage = "blog"
 postPage = "post"
-== 
+==
+<?php
+function onStart()
+{
+    $this['backendUrl'] = Backend::url('cms/themeoptions/update');
+}
+?>
+==
 {% set posts = blogPosts.posts %}
 {% set post2 = blogPosts2.posts %}
 {% set post2Cat = blogPosts2.category %}
@@ -63,7 +70,7 @@ postPage = "post"
 								<div class="hs-subtitle">Award Winning UNIVERSITY</div>
 								<h2 class="hs-title">An investment in knowledge pays the best interest.</h2>
 								<p class="hs-des">Education is not just about going to school and getting a degree. It's about widening your<br> knowledge and absorbing the truth about life. Knowledge is power.</p>
-								<a href="#"><div class="site-btn">GET STARTED</div></a>
+								<a href="{{ backendUrl }}"><div class="site-btn">GET STARTED</div></a>
 							</div>
 						</div>
 					</div>
