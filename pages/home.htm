@@ -30,12 +30,6 @@ sortOrder = "published_at desc"
 categoryPage = "blog"
 postPage = "post"
 == 
-{# function onEnd()
-{
-    // Optional - set the page title to the category name
-        $this->page->title = $this->category->name;
-}
-== #}
 {% set posts = blogPosts.posts %}
 {% set post2 = blogPosts2.posts %}
 {% set post2Cat = blogPosts2.category %}
