@@ -20,13 +20,13 @@ postPage = "post"
 						<p>{% if ( this.theme.company_logo_description|length > 0 )%}{{ this.theme.company_logo_description|_ }}{% else %} Lorem ipsum dolor sit amet, consecter adipiscing elite. Donec minos varius, viverra justo ut, aliquet nisl.{% endif %}</p>
 						<div class="social pt-1">
 						{% if (this.theme.social_twitter|length > 0)%}
-							<a href="{{this.theme.social_twitter}}"><i class="fa fa-twitter-square"></i></a>
+							<a href="{{this.theme.social_twitter}}" target="_blank"><i class="fa fa-twitter-square"></i></a>
 						{% endif %}
 						{% if (this.theme.social_facebook|length > 0)%}
-							<a href="{{ this.theme.social_facebook }}"><i class="fa fa-facebook-square"></i></a>
+							<a href="{{ this.theme.social_facebook }}" target="_blank"><i class="fa fa-facebook-square"></i></a>
 						{% endif %}
 						{% if (this.theme.social_instagram|length > 0)%}
-							<a href="{{ this.theme.social_instagram }}"><i class="fa fa-instagram"></i></a>
+							<a href="{{ this.theme.social_instagram }}" target="_blank"><i class="fa fa-instagram"></i></a>
 						{% endif %}
 						</div>
 					</div>
