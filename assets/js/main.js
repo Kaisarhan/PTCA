@@ -116,6 +116,14 @@ $(window).on('load', function() {
 		type: 'image',
 		mainClass: 'img-popup-warp',
 		removalDelay: 400,
+		gallery:{enabled:true}, //this part should do the stuff
+	});
+
+	$('.hiro-button').magnificPopup({
+		type: 'image',
+		mainClass: 'img-popup-warp',
+		removalDelay: 400,
+		gallery:{enabled:true}, //this part should do the stuff
 	});
 
 
