@@ -141,8 +141,9 @@ tabs:
 
         hero_button_url:
             tab: Hero
-            label: URL Вашей кнопки
-            type: text
+            label: Файл для конпки
+            type: mediafinder
+            mode: file
             span: right
         
         hero_image:

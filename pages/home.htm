@@ -51,13 +51,10 @@ function onStart()
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-8">
-								<div class="hs-subtitle">{{ slide.subtitle|_ }}</div>
-								<h2 class="hs-title">{{ slide.title|_ }}</h2>
-								<p class="hs-des">{{ slide.description|_ }}</p>
-								<a href="{{ this.thame.hero_button_url }}" class="hiro-button"><div class="site-btn">{{ this.theme.hero_button_text }}</div></a>
-								<a href="{{ 'assets/img/gallery/1.jpg'|theme }}" class="hiro-button"></a>
-								<a href="{{ 'assets/img/gallery/2.jpg'|theme }}" class="hiro-button"></a>
-								<a href="{{ 'assets/img/gallery/3.jpg'|theme }}" class="hiro-button"></a>
+								<div class="hs-subtitle">{{ slide.subtitle }}</div>
+								<h2 class="hs-title">{{ slide.title }}</h2>
+								<p class="hs-des">{{ slide.description }}</p>
+								<a href="{{ this.theme.hero_button_url|media }}" target="_blank"><div class="site-btn">{{ this.theme.hero_button_text }}</div></a>
 							</div>
 						</div>
 					</div>
@@ -97,7 +94,6 @@ function onStart()
 		</div>
 	</section>
 	<!-- Hero section end -->
-
 	<!-- Counter section  -->
 	{# 	
 	<section class="counter-section">
@@ -370,76 +366,76 @@ function onStart()
 			<div class="grid-sizer"></div>
 			{% if (this.theme.gallery_big1)|length > 0 %}
 			<div class="gallery-item gi-big set-bg" data-setbg="{{ this.theme.gallery_big1|media }}">
-				<a class="img-popup" href="{{ this.theme.gallery_big1|media }}"><i class="ti-plus"></i></a>
+				<a class="img-popup" href="{{ this.theme.gallery_big1|media }}"><i class="fa fa-search"></i></a>
 			</div>
 			{% else %}
 			<div class="gallery-item gi-big set-bg" data-setbg="{{'assets/img/gallery/1.jpg'|theme }}">
-				<a class="img-popup" href="{{'assets/img/gallery/1.jpg'|theme }}"><i class="ti-plus"></i></a>
+				<a class="img-popup" href="{{'assets/img/gallery/1.jpg'|theme }}"><i class="fa fa-search"></i></a>
 			</div>
 			{% endif %}
 
 			{% if (this.theme.gallery_smal1_1)|length > 0 %}
 			<div class="gallery-item set-bg" data-setbg="{{ this.theme.gallery_smal1_1|media }}">
-				<a class="img-popup" href="{{ this.theme.gallery_smal1_1|media }}"><i class="ti-plus"></i></a>
+				<a class="img-popup" href="{{ this.theme.gallery_smal1_1|media }}"><i class="fa fa-search"></i></a>
 			</div>
 			{% else %}
 			<div class="gallery-item set-bg" data-setbg="{{'assets/img/gallery/2.jpg'|theme }}">
-				<a class="img-popup" href="{{'assets/img/gallery/2.jpg'|theme }}"><i class="ti-plus"></i></a>
+				<a class="img-popup" href="{{'assets/img/gallery/2.jpg'|theme }}"><i class="fa fa-search"></i></a>
 			</div>
 			{% endif %}
 
 			{% if (this.theme.gallery_smal1_2)|length > 0 %}
 			<div class="gallery-item set-bg" data-setbg="{{ this.theme.gallery_smal1_2|media }}">
-				<a class="img-popup" href="{{ this.theme.gallery_smal1_2|media }}"><i class="ti-plus"></i></a>
+				<a class="img-popup" href="{{ this.theme.gallery_smal1_2|media }}"><i class="fa fa-search"></i></a>
 			</div>
 			{% else %}
 			<div class="gallery-item set-bg" data-setbg="{{'assets/img/gallery/3.jpg'|theme }}">
-				<a class="img-popup" href="{{'assets/img/gallery/3.jpg'|theme }}"><i class="ti-plus"></i></a>
+				<a class="img-popup" href="{{'assets/img/gallery/3.jpg'|theme }}"><i class="fa fa-search"></i></a>
 			</div>
 			{% endif %}
 			{% if (this.theme.gallery_average2|length > 0 ) %}
 			<div class="gallery-item gi-long set-bg" data-setbg="{{ this.theme.gallery_average2|media }}">
-				<a class="img-popup" href="{{ this.theme.gallery_average2|media }}"><i class="ti-plus"></i></a>
+				<a class="img-popup" href="{{ this.theme.gallery_average2|media }}"><i class="fa fa-search"></i></a>
 			</div>
 			{% else %}
 			<div class="gallery-item gi-long set-bg" data-setbg="{{'assets/img/gallery/5.jpg'|theme }}">
-				<a class="img-popup" href="{{'assets/img/gallery/5.jpg'|theme }}"><i class="ti-plus"></i></a>
+				<a class="img-popup" href="{{'assets/img/gallery/5.jpg'|theme }}"><i class="fa fa-search"></i></a>
 			</div>
 			{% endif %}
 			{% if ( this.theme.gallery_big2|length > 0 ) %}
 			<div class="gallery-item gi-big set-bg" data-setbg="{{ this.theme.gallery_big2|media }}">
-				<a class="img-popup" href="{{ this.theme.gallery_big2|media }}"><i class="ti-plus"></i></a>
+				<a class="img-popup" href="{{ this.theme.gallery_big2|media }}"><i class="fa fa-search"></i></a>
 			</div>
 			{% else %}
 			<div class="gallery-item gi-big set-bg" data-setbg="{{'assets/img/gallery/8.jpg'|theme }}">
-				<a class="img-popup" href="{{'assets/img/gallery/8.jpg'|theme }}"><i class="ti-plus"></i></a>
+				<a class="img-popup" href="{{'assets/img/gallery/8.jpg'|theme }}"><i class="fa fa-search"></i></a>
 			</div>
 			{% endif %}
 			{% if ( this.theme.gallery_average1|length > 0 ) %}
 			<div class="gallery-item gi-long set-bg" data-setbg="{{ this.theme.gallery_average1|media }}">
-				<a class="img-popup" href="{{ this.theme.gallery_average1|media }}"><i class="ti-plus"></i></a>
+				<a class="img-popup" href="{{ this.theme.gallery_average1|media }}"><i class="fa fa-search"></i></a>
 			</div>
 			{% else %}
 			<div class="gallery-item gi-long set-bg" data-setbg="{{'assets/img/gallery/4.jpg'|theme }}">
-				<a class="img-popup" href="{{'assets/img/gallery/4.jpg'|theme }}"><i class="ti-plus"></i></a>
+				<a class="img-popup" href="{{'assets/img/gallery/4.jpg'|theme }}"><i class="fa fa-search"></i></a>
 			</div>
 			{% endif %}
 			{% if (this.theme.gallery_smal2_1|length > 0 ) %}
 			<div class="gallery-item set-bg" data-setbg="{{ this.theme.gallery_smal2_1|media }}">
-				<a class="img-popup" href="{{ this.theme.gallery_smal2_1|media }}"><i class="ti-plus"></i></a>
+				<a class="img-popup" href="{{ this.theme.gallery_smal2_1|media }}"><i class="fa fa-search"></i></a>
 			</div>
 			{% else %}
 			<div class="gallery-item set-bg" data-setbg="{{'assets/img/gallery/6.jpg'|theme }}">
-				<a class="img-popup" href="{{'assets/img/gallery/6.jpg'|theme }}"><i class="ti-plus"></i></a>
+				<a class="img-popup" href="{{'assets/img/gallery/6.jpg'|theme }}"><i class="fa fa-search"></i></a>
 			</div>
 			{% endif %}
 			{% if ( this.theme.gallery_smal2_2|length > 0 ) %}
 			<div class="gallery-item set-bg" data-setbg="{{ this.theme.gallery_smal2_2|media }}">
-				<a class="img-popup" href="{{ this.theme.gallery_smal2_2|media }}"><i class="ti-plus"></i></a>
+				<a class="img-popup" href="{{ this.theme.gallery_smal2_2|media }}"><i class="fa fa-search"></i></a>
 			</div>
 			{% else %}
 			<div class="gallery-item set-bg" data-setbg="{{'assets/img/gallery/7.jpg'|theme }}">
-				<a class="img-popup" href="{{'assets/img/gallery/7.jpg'|theme }}"><i class="ti-plus"></i></a>
+				<a class="img-popup" href="{{'assets/img/gallery/7.jpg'|theme }}"><i class="fa fa-search"></i></a>
 			</div>
 			{% endif %}
 		</div>
