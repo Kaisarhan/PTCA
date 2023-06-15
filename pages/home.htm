@@ -240,36 +240,37 @@ function onStart()
 	</section>
 	<!-- Enroll section end -->
 
-	<!-- Courses section -->
-	<section class="courses-section spad">
+	<!-- Blog section -->
+	<section class="blog-section spad">
 		<div class="container">
-			<div class="section-title text-center">			
-				<h3>{{ blogPosts2.category.name }}</h3>
-				<p>{{ blogPosts2.category.description }}</p>
-			</div>			
+			<div class="section-title text-center">
+				<h3>{{ blogPosts.category.name }}</h3>
+				<p>{{ blogPosts.category.description }}</p>
+			</div>
 			<div class="row">
-			{% for curse in post2 %}
-				<!-- course item -->
-				<div class="col-lg-4 col-md-6 course-item">
-					<div class="course-thumb">
-					{% for image in curse.featured_images|slice(0,1)%}
-						<img src="{{ image.path }}" alt="{{ image.path }}">
+			{% for post in posts %}				
+				<div class="col-xl-6">
+					<div class="blog-item">
+					<a href="{{ post.url }}">
+					{% for image in post.featured_images|slice(0,1)%}
+						<div class="blog-thumb set-bg" data-setbg="{{ image.path }}"></div>
 					{% endfor %}
-						<div class="course-cat">
-							<span>{{ curse.excerpt }}</span>
+						<div class="blog-content">
+							<h4>{{post.title}}</h4>
+							<div class="blog-meta">
+								<span><i class="fa fa-calendar-o"></i> {{ post.published_at|date ('d M Y')}}</span>
+								<span><i class="fa fa-user"></i> {{post.user.first_name}} {{post.user.last_name}}</span>
+							</div>
+							<p>{{post.excerpt}}</p>
 						</div>
+					</a>
 					</div>
-					<div class="course-info">
-						<div class="date"><i class="fa fa-clock-o"></i> {{ curse.published_at|date ('d M Y')}}</div>
-						<a href="{{ curse.url }}"><h4>{{ curse.title }}</h4></a>
-					</div>
-				</div>
-				<!-- course item -->
-			{% endfor %}				
+				</div>				
+			{% endfor %}
 			</div>
 		</div>
 	</section>
-	<!-- Courses section end-->
+	<!-- Blog section -->
 
 	<!-- Fact section -->
 	<section class="fact-section spad set-bg" data-setbg="{% if (this.theme.facts_bgimage|length > 0 ) %}{{ this.theme.facts_bgimage|media}} {% else %}{{'assets/img/fact-bg.jpg'|theme }} {% endif %}">
@@ -441,35 +442,33 @@ function onStart()
 		</div>
 	</div>
 	<!-- Gallery section -->
-
-	<!-- Blog section -->
-	<section class="blog-section spad">
+		<!-- Courses section -->
+	<section class="courses-section spad">
 		<div class="container">
-			<div class="section-title text-center">
-				<h3>{{ blogPosts.category.name }}</h3>
-				<p>{{ blogPosts.category.description }}</p>
-			</div>
+			<div class="section-title text-center">			
+				<h3>{{ blogPosts2.category.name }}</h3>
+				<p>{{ blogPosts2.category.description }}</p>
+			</div>			
 			<div class="row">
-			{% for post in posts %}				
-				<div class="col-xl-6">
-					<div class="blog-item">
-					<a href="{{ post.url }}">
-					{% for image in post.featured_images|slice(0,1)%}
-						<div class="blog-thumb set-bg" data-setbg="{{ image.path }}"></div>
+			{% for curse in post2 %}
+				<!-- course item -->
+				<div class="col-lg-4 col-md-6 course-item">
+					<div class="course-thumb">
+					{% for image in curse.featured_images|slice(0,1)%}
+						<img src="{{ image.path }}" alt="{{ image.path }}">
 					{% endfor %}
-						<div class="blog-content">
-							<h4>{{post.title}}</h4>
-							<div class="blog-meta">
-								<span><i class="fa fa-calendar-o"></i> {{ post.published_at|date ('d M Y')}}</span>
-								<span><i class="fa fa-user"></i> {{post.user.first_name}} {{post.user.last_name}}</span>
-							</div>
-							<p>{{post.excerpt}}</p>
+						<div class="course-cat">
+							<span>{{ curse.excerpt }}</span>
 						</div>
-					</a>
 					</div>
-				</div>				
-			{% endfor %}
+					<div class="course-info">
+						<div class="date"><i class="fa fa-clock-o"></i> {{ curse.published_at|date ('d M Y')}}</div>
+						<a href="{{ curse.url }}"><h4>{{ curse.title }}</h4></a>
+					</div>
+				</div>
+				<!-- course item -->
+			{% endfor %}				
 			</div>
 		</div>
 	</section>
-	<!-- Blog section -->
+	<!-- Courses section end-->
