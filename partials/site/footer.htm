@@ -17,7 +17,7 @@ postPage = "post"
 				<div class="col-sm-6 col-lg-3 footer-widget">
 					<div class="about-widget">
 						<img src="{% if ( this.theme.company_logo|length > 0 )%}{{ this.theme.company_logo|media }} {% else %}{{ 'assets/img/ptk-logo.png'|theme }} {% endif %}" alt="logo">
-						<p>{% if ( this.theme.company_logo_description|length > 0 )%}{{ this.theme.company_logo_description|_ }}{% else %} Lorem ipsum dolor sit amet, consecter adipiscing elite. Donec minos varius, viverra justo ut, aliquet nisl.{% endif %}</p>
+						<p>{% if ( this.theme.company_logo_description|length > 0 )%}{{ this.theme.company_logo_description }}{% else %} Lorem ipsum dolor sit amet, consecter adipiscing elite. Donec minos varius, viverra justo ut, aliquet nisl.{% endif %}</p>
 						<div class="social pt-1">
 						{% if (this.theme.social_twitter|length > 0)%}
 							<a href="{{this.theme.social_twitter}}" target="_blank"><i class="fa fa-twitter-square"></i></a>
@@ -63,7 +63,7 @@ postPage = "post"
 						<a href="tel:{{this.theme.company_work_number}}"><li><p><i class="fa fa-phone"></i> {{this.theme.company_work_number}}</p></li></a>		
 						<a href="tel:{{this.theme.company_mobile_number}}"><li><p><i class="fa fa-phone"></i> {{this.theme.company_mobile_number}}</p></li></a>						
 						<a href="mailto:{{this.theme.company_email}}"><li><p><i class="fa fa-envelope"></i> {{this.theme.company_email}}</p></li></a>
-						<li><p><i class="fa fa-clock-o"></i> {{ this.theme.company_work_time|_ }}</p></li>
+						<li><p><i class="fa fa-clock-o"></i> {{ this.theme.company_work_time }}</p></li>
 					</ul>
 				</div>
 			</div>
