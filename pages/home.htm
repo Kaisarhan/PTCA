@@ -51,10 +51,13 @@ function onStart()
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-8">
-								<div class="hs-subtitle">{{ slide.subtitle }}</div>
-								<h2 class="hs-title">{{ slide.title }}</h2>
-								<p class="hs-des">{{ slide.description }}</p>
-								<a href="{{ this.theme.hero_button_url|media }}" target="_blank"><div class="site-btn">{{ this.theme.hero_button_text }}</div></a>
+								<div class="hs-subtitle">{{ slide.subtitle|_ }}</div>
+								<h2 class="hs-title">{{ slide.title|_ }}</h2>
+								<p class="hs-des">{{ slide.description|_ }}</p>
+								<a href="{{ this.thame.hero_button_url }}" class="hiro-button"><div class="site-btn">{{ this.theme.hero_button_text }}</div></a>
+								<a href="{{ 'assets/img/gallery/1.jpg'|theme }}" class="hiro-button"></a>
+								<a href="{{ 'assets/img/gallery/2.jpg'|theme }}" class="hiro-button"></a>
+								<a href="{{ 'assets/img/gallery/3.jpg'|theme }}" class="hiro-button"></a>
 							</div>
 						</div>
 					</div>
@@ -94,9 +97,51 @@ function onStart()
 		</div>
 	</section>
 	<!-- Hero section end -->
+
+	<!-- Testimonial section  -->
+	<section class="testimonial-section spad">
+		<div class="container">
+			<div class="section-title-white text-center">
+				<h3>{{this.theme.partners_title }}</h3>
+				<p>{{this.theme.partners_subtitle }}</p>
+			</div>
+			{% if (this.theme.partners_img|length > 0)%}
+			
+			<div class="testimonial-slider owl-carousel">
+			{% for brands in this.theme.partners_img %}
+				<div class="ts-item">
+					<img src="{{ brands.image|media }}" alt="">
+				</div>
+			{% endfor %}
+			</div>
+			{% else %}
+			<div class="testimonial-slider owl-carousel">
+				<div class="ts-item">
+					<img src="{{ 'assets/img/brands/1.png'|theme }}" alt="">
+				</div>
+				<div class="ts-item">
+					<img src="{{ 'assets/img/brands/2.png'|theme }}" alt="">
+				</div>
+				<div class="ts-item">
+					<img src="{{ 'assets/img/brands/3.png'|theme }}" alt="">
+				</div>
+				<div class="ts-item">
+					<img src="{{ 'assets/img/brands/4.png'|theme }}" alt="">
+				</div>
+				<div class="ts-item">
+					<img src="{{ 'assets/img/brands/5.png'|theme }}" alt="">
+				</div>
+				<div class="ts-item">
+					<img src="{{ 'assets/img/brands/6.png'|theme }}" alt="">
+				</div>
+			</div>
+			{% endif %}
+		</div>
+	</section>
+	<!-- Testimonial section end -->
+
 	<!-- Counter section  -->
-	{# 	
-	<section class="counter-section">
+{# 	<section class="counter-section">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-7 col-md-6">
@@ -110,8 +155,7 @@ function onStart()
 				</div>
 			</div>
 		</div>
-	</section> 
-	#}
+	</section>  #}
 	<!-- Counter section end -->
 
 	<!-- Services section -->
@@ -240,37 +284,36 @@ function onStart()
 	</section>
 	<!-- Enroll section end -->
 
-	<!-- Blog section -->
-	<section class="blog-section spad">
+	<!-- Courses section -->
+	<section class="courses-section spad">
 		<div class="container">
-			<div class="section-title text-center">
-				<h3>{{ blogPosts.category.name }}</h3>
-				<p>{{ blogPosts.category.description }}</p>
-			</div>
+			<div class="section-title text-center">			
+				<h3>{{ blogPosts2.category.name }}</h3>
+				<p>{{ blogPosts2.category.description }}</p>
+			</div>			
 			<div class="row">
-			{% for post in posts %}				
-				<div class="col-xl-6">
-					<div class="blog-item">
-					<a href="{{ post.url }}">
-					{% for image in post.featured_images|slice(0,1)%}
-						<div class="blog-thumb set-bg" data-setbg="{{ image.path }}"></div>
+			{% for curse in post2 %}
+				<!-- course item -->
+				<div class="col-lg-4 col-md-6 course-item">
+					<div class="course-thumb">
+					{% for image in curse.featured_images|slice(0,1)%}
+						<img src="{{ image.path }}" alt="{{ image.path }}">
 					{% endfor %}
-						<div class="blog-content">
-							<h4>{{post.title}}</h4>
-							<div class="blog-meta">
-								<span><i class="fa fa-calendar-o"></i> {{ post.published_at|date ('d M Y')}}</span>
-								<span><i class="fa fa-user"></i> {{post.user.first_name}} {{post.user.last_name}}</span>
-							</div>
-							<p>{{post.excerpt}}</p>
+						<div class="course-cat">
+							<span>{{ curse.excerpt }}</span>
 						</div>
-					</a>
 					</div>
-				</div>				
-			{% endfor %}
+					<div class="course-info">
+						<div class="date"><i class="fa fa-clock-o"></i> {{ curse.published_at|date ('d M Y')}}</div>
+						<a href="{{ curse.url }}"><h4>{{ curse.title }}</h4></a>
+					</div>
+				</div>
+				<!-- course item -->
+			{% endfor %}				
 			</div>
 		</div>
 	</section>
-	<!-- Blog section -->
+	<!-- Courses section end-->
 
 	<!-- Fact section -->
 	<section class="fact-section spad set-bg" data-setbg="{% if (this.theme.facts_bgimage|length > 0 ) %}{{ this.theme.facts_bgimage|media}} {% else %}{{'assets/img/fact-bg.jpg'|theme }} {% endif %}">
@@ -367,108 +410,110 @@ function onStart()
 			<div class="grid-sizer"></div>
 			{% if (this.theme.gallery_big1)|length > 0 %}
 			<div class="gallery-item gi-big set-bg" data-setbg="{{ this.theme.gallery_big1|media }}">
-				<a class="img-popup" href="{{ this.theme.gallery_big1|media }}"><i class="fa fa-search"></i></a>
+				<a class="img-popup" href="{{ this.theme.gallery_big1|media }}"><i class="ti-plus"></i></a>
 			</div>
 			{% else %}
 			<div class="gallery-item gi-big set-bg" data-setbg="{{'assets/img/gallery/1.jpg'|theme }}">
-				<a class="img-popup" href="{{'assets/img/gallery/1.jpg'|theme }}"><i class="fa fa-search"></i></a>
+				<a class="img-popup" href="{{'assets/img/gallery/1.jpg'|theme }}"><i class="ti-plus"></i></a>
 			</div>
 			{% endif %}
 
 			{% if (this.theme.gallery_smal1_1)|length > 0 %}
 			<div class="gallery-item set-bg" data-setbg="{{ this.theme.gallery_smal1_1|media }}">
-				<a class="img-popup" href="{{ this.theme.gallery_smal1_1|media }}"><i class="fa fa-search"></i></a>
+				<a class="img-popup" href="{{ this.theme.gallery_smal1_1|media }}"><i class="ti-plus"></i></a>
 			</div>
 			{% else %}
 			<div class="gallery-item set-bg" data-setbg="{{'assets/img/gallery/2.jpg'|theme }}">
-				<a class="img-popup" href="{{'assets/img/gallery/2.jpg'|theme }}"><i class="fa fa-search"></i></a>
+				<a class="img-popup" href="{{'assets/img/gallery/2.jpg'|theme }}"><i class="ti-plus"></i></a>
 			</div>
 			{% endif %}
 
 			{% if (this.theme.gallery_smal1_2)|length > 0 %}
 			<div class="gallery-item set-bg" data-setbg="{{ this.theme.gallery_smal1_2|media }}">
-				<a class="img-popup" href="{{ this.theme.gallery_smal1_2|media }}"><i class="fa fa-search"></i></a>
+				<a class="img-popup" href="{{ this.theme.gallery_smal1_2|media }}"><i class="ti-plus"></i></a>
 			</div>
 			{% else %}
 			<div class="gallery-item set-bg" data-setbg="{{'assets/img/gallery/3.jpg'|theme }}">
-				<a class="img-popup" href="{{'assets/img/gallery/3.jpg'|theme }}"><i class="fa fa-search"></i></a>
+				<a class="img-popup" href="{{'assets/img/gallery/3.jpg'|theme }}"><i class="ti-plus"></i></a>
 			</div>
 			{% endif %}
 			{% if (this.theme.gallery_average2|length > 0 ) %}
 			<div class="gallery-item gi-long set-bg" data-setbg="{{ this.theme.gallery_average2|media }}">
-				<a class="img-popup" href="{{ this.theme.gallery_average2|media }}"><i class="fa fa-search"></i></a>
+				<a class="img-popup" href="{{ this.theme.gallery_average2|media }}"><i class="ti-plus"></i></a>
 			</div>
 			{% else %}
 			<div class="gallery-item gi-long set-bg" data-setbg="{{'assets/img/gallery/5.jpg'|theme }}">
-				<a class="img-popup" href="{{'assets/img/gallery/5.jpg'|theme }}"><i class="fa fa-search"></i></a>
+				<a class="img-popup" href="{{'assets/img/gallery/5.jpg'|theme }}"><i class="ti-plus"></i></a>
 			</div>
 			{% endif %}
 			{% if ( this.theme.gallery_big2|length > 0 ) %}
 			<div class="gallery-item gi-big set-bg" data-setbg="{{ this.theme.gallery_big2|media }}">
-				<a class="img-popup" href="{{ this.theme.gallery_big2|media }}"><i class="fa fa-search"></i></a>
+				<a class="img-popup" href="{{ this.theme.gallery_big2|media }}"><i class="ti-plus"></i></a>
 			</div>
 			{% else %}
 			<div class="gallery-item gi-big set-bg" data-setbg="{{'assets/img/gallery/8.jpg'|theme }}">
-				<a class="img-popup" href="{{'assets/img/gallery/8.jpg'|theme }}"><i class="fa fa-search"></i></a>
+				<a class="img-popup" href="{{'assets/img/gallery/8.jpg'|theme }}"><i class="ti-plus"></i></a>
 			</div>
 			{% endif %}
 			{% if ( this.theme.gallery_average1|length > 0 ) %}
 			<div class="gallery-item gi-long set-bg" data-setbg="{{ this.theme.gallery_average1|media }}">
-				<a class="img-popup" href="{{ this.theme.gallery_average1|media }}"><i class="fa fa-search"></i></a>
+				<a class="img-popup" href="{{ this.theme.gallery_average1|media }}"><i class="ti-plus"></i></a>
 			</div>
 			{% else %}
 			<div class="gallery-item gi-long set-bg" data-setbg="{{'assets/img/gallery/4.jpg'|theme }}">
-				<a class="img-popup" href="{{'assets/img/gallery/4.jpg'|theme }}"><i class="fa fa-search"></i></a>
+				<a class="img-popup" href="{{'assets/img/gallery/4.jpg'|theme }}"><i class="ti-plus"></i></a>
 			</div>
 			{% endif %}
 			{% if (this.theme.gallery_smal2_1|length > 0 ) %}
 			<div class="gallery-item set-bg" data-setbg="{{ this.theme.gallery_smal2_1|media }}">
-				<a class="img-popup" href="{{ this.theme.gallery_smal2_1|media }}"><i class="fa fa-search"></i></a>
+				<a class="img-popup" href="{{ this.theme.gallery_smal2_1|media }}"><i class="ti-plus"></i></a>
 			</div>
 			{% else %}
 			<div class="gallery-item set-bg" data-setbg="{{'assets/img/gallery/6.jpg'|theme }}">
-				<a class="img-popup" href="{{'assets/img/gallery/6.jpg'|theme }}"><i class="fa fa-search"></i></a>
+				<a class="img-popup" href="{{'assets/img/gallery/6.jpg'|theme }}"><i class="ti-plus"></i></a>
 			</div>
 			{% endif %}
 			{% if ( this.theme.gallery_smal2_2|length > 0 ) %}
 			<div class="gallery-item set-bg" data-setbg="{{ this.theme.gallery_smal2_2|media }}">
-				<a class="img-popup" href="{{ this.theme.gallery_smal2_2|media }}"><i class="fa fa-search"></i></a>
+				<a class="img-popup" href="{{ this.theme.gallery_smal2_2|media }}"><i class="ti-plus"></i></a>
 			</div>
 			{% else %}
 			<div class="gallery-item set-bg" data-setbg="{{'assets/img/gallery/7.jpg'|theme }}">
-				<a class="img-popup" href="{{'assets/img/gallery/7.jpg'|theme }}"><i class="fa fa-search"></i></a>
+				<a class="img-popup" href="{{'assets/img/gallery/7.jpg'|theme }}"><i class="ti-plus"></i></a>
 			</div>
 			{% endif %}
 		</div>
 	</div>
 	<!-- Gallery section -->
-		<!-- Courses section -->
-	<section class="courses-section spad">
+
+	<!-- Blog section -->
+	<section class="blog-section spad">
 		<div class="container">
-			<div class="section-title text-center">			
-				<h3>{{ blogPosts2.category.name }}</h3>
-				<p>{{ blogPosts2.category.description }}</p>
-			</div>			
+			<div class="section-title text-center">
+				<h3>{{ blogPosts.category.name }}</h3>
+				<p>{{ blogPosts.category.description }}</p>
+			</div>
 			<div class="row">
-			{% for curse in post2 %}
-				<!-- course item -->
-				<div class="col-lg-4 col-md-6 course-item">
-					<div class="course-thumb">
-					{% for image in curse.featured_images|slice(0,1)%}
-						<img src="{{ image.path }}" alt="{{ image.path }}">
+			{% for post in posts %}				
+				<div class="col-xl-6">
+					<div class="blog-item">
+					<a href="{{ post.url }}">
+					{% for image in post.featured_images|slice(0,1)%}
+						<div class="blog-thumb set-bg" data-setbg="{{ image.path }}"></div>
 					{% endfor %}
-						<div class="course-cat">
-							<span>{{ curse.excerpt }}</span>
+						<div class="blog-content">
+							<h4>{{post.title}}</h4>
+							<div class="blog-meta">
+								<span><i class="fa fa-calendar-o"></i> {{ post.published_at|date ('d M Y')}}</span>
+								<span><i class="fa fa-user"></i> {{post.user.first_name}} {{post.user.last_name}}</span>
+							</div>
+							<p>{{post.excerpt}}</p>
 						</div>
+					</a>
 					</div>
-					<div class="course-info">
-						<div class="date"><i class="fa fa-clock-o"></i> {{ curse.published_at|date ('d M Y')}}</div>
-						<a href="{{ curse.url }}"><h4>{{ curse.title }}</h4></a>
-					</div>
-				</div>
-				<!-- course item -->
-			{% endfor %}				
+				</div>				
+			{% endfor %}
 			</div>
 		</div>
 	</section>
-	<!-- Courses section end-->
+	<!-- Blog section -->

@@ -1163,8 +1163,22 @@ ol {
 	color: var(--theme-color-two);
 }
 
+.section-title-white {
+	margin-bottom: 70px;
+}
+
+.section-title-white h3 {
+	text-transform: uppercase;
+	margin-bottom: 20px;
+	color: white;
+}
+
+.section-title-white p {
+	margin-bottom: 0;
+}
+
 .testimonial-section {
-	background: #f7f7f7;
+	background: var(--theme-color);
 }
 
 .testimonial-slider .ts-author-pic {
@@ -1824,7 +1838,7 @@ ol {
 	}
 	.testimonial-slider .ts-item {
 		text-align: center;
-		padding-bottom: 50px;
+		padding: 0px;
 	}
 	.member {
 		margin-bottom: 40px;

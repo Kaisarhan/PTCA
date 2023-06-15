@@ -130,6 +130,35 @@ tabs:
             type: mediafinder
             mode: image
 
+        # TAB: PARTNERS
+        partners_title:
+            tab: Partners
+            label: Заголовок
+            type: text
+            default: Наши партнеры
+            translatable: true
+            span: left
+
+        partners_subtitle:
+            tab: Partners
+            label: Подзаголовок
+            type: text
+            default: Описание блока партнеров
+            translatable: true
+            span: right
+
+        partners_img:
+            tab: Partners
+            label: Ваши партнеры
+            type: repeater
+            form:
+                fields:
+                    image:
+                        label: Логотип вашего партнера
+                        type: mediafinder
+                        mode: image
+                        
+
         # TAB: HERO        
         hero_button_text:
             tab: Hero

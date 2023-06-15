@@ -63,6 +63,18 @@ $(window).on('load', function() {
 		autoplay: true
 	});
 
+	/*------------------
+		Brands Slider
+	--------------------*/
+	$('.brand-items').owlCarousel({
+		loop: true,
+		nav: false,
+		dots: true,
+		mouseDrag: false,
+		animateOut: 'fadeOut',
+    	animateIn: 'fadeIn',
+		autoplay: true
+	});
 
 	/*------------------
 		Counter
@@ -98,12 +110,10 @@ $(window).on('load', function() {
 	--------------------*/
 	$('.testimonial-slider').owlCarousel({
 		loop: true,
-		nav: true,
-		dots: true,
-		animateOut: 'fadeOutUp',
-		animateIn: 'fadeInUp',
-		navText: ['<i class="fa fa-angle-left"></i>', '</i><i class="fa fa-angle-right"></i>'],
-		items: 1,
+		margin:10,
+		nav: false,
+		dots: false,
+		items: 4,
 		autoplay: true
 	});
 	
