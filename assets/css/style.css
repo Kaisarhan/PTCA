@@ -866,7 +866,7 @@ ol {
 	position: absolute;
 	width: 50px;
 	height: 50px;
-	background: rgba(246, 120, 58, 0.9);
+	background: var(--theme-color-two);
 	color: #fff;
 	left: 50%;
 	top: 60%;

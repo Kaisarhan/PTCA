@@ -113,7 +113,7 @@ $(window).on('load', function() {
 		margin:10,
 		nav: false,
 		dots: false,
-		items: 4,
+		items: 6,
 		autoplay: true
 	});
 	
