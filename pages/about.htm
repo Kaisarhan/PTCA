@@ -43,3 +43,61 @@ is_hidden = 0
 		</div>
 	</section>
 	<!-- About section end-->
+
+		<!-- Team section  -->
+	<section class="team-section spad">
+		<div class="container">
+			<div class="section-title text-center">
+				<h3>{{ this.theme.administration_title }}</h3>
+				<p>{{ this.theme.administration_subtitle }}</p>
+			</div>
+			<div class="row">
+			{% if (this.theme.administration_details|length > 0 )%}
+			{% for administration in this.theme.administration_details %}
+				<div class="col-md-6 col-lg-3 mt-5">
+					<div class="member">
+						<div class="member-pic set-bg" data-setbg="{{ administration.photo|media }}">
+						</div>
+						<h5>{{ administration.name }}</h5>
+						<p>{{ administration.job_title }}</p>
+					</div>
+				</div>
+			{% endfor %}
+			{% else %}
+				<div class="col-md-6 col-lg-3 mt-5">
+					<div class="member">
+						<div class="member-pic set-bg" data-setbg="{{ 'assets/img/member/1.jpg'|theme }}">
+						</div>
+						<h5>Sasha Johnson</h5>
+						<p>Literature Teacher</p>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 mt-5">
+					<div class="member">
+						<div class="member-pic set-bg" data-setbg="{{ 'assets/img/member/2.jpg'|theme }}">
+						</div>
+						<h5>Darmian Shaw</h5>
+						<p>Physics Teacher</p>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 mt-5">
+					<div class="member">
+						<div class="member-pic set-bg" data-setbg="{{ 'assets/img/member/3.jpg'|theme }}">
+						</div>
+						<h5>Joshua Matt</h5>
+						<p>Matt Teacher</p>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 mt-5">
+					<div class="member">
+						<div class="member-pic set-bg" data-setbg="{{ 'assets/img/member/4.jpg'|theme }}">
+						</div>
+						<h5>Taylor Launer</h5>
+						<p>Music Teacher</p>
+					</div>
+				</div>
+			{% endif %}
+			</div>
+		</div>
+	</section>
+	<!-- Team section end -->

@@ -116,7 +116,7 @@ $(window).on('load', function () {
     } //this part should do the stuff
 
   });
-  $('.hiro-button').magnificPopup({
+  $('.galerey-photo').magnificPopup({
     type: 'image',
     mainClass: 'img-popup-warp',
     removalDelay: 400,

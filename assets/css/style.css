@@ -1264,13 +1264,13 @@ ol {
 	font-weight: 14;
 }
 
-.member:hover .member-pic:after {
+/* .member:hover .member-pic:after {
 	opacity: 0.4;
-}
+} */
 
-.member:hover .member-social {
+/* .member:hover .member-social {
 	opacity: 1;
-}
+} */
 
 .member:hover .member-social a {
 	top: 0;

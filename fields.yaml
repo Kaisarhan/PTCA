@@ -130,6 +130,48 @@ tabs:
             type: mediafinder
             mode: image
 
+        #TAB: ADMINISTRATION
+        administration_title:
+            tab: Administration
+            label: Заголовок
+            type: text
+            default: Администрация
+            span: left
+            translatable: true
+
+        administration_subtitle:
+            tab: Administration
+            label: Подзаголовок
+            type: text
+            default: Описание администраций
+            span: right
+            translatable: true
+
+        administration_details:
+            tab: Administration
+            label: Ваши партнеры
+            type: repeater
+            prompt: Добавить администрацию
+            translatable: true
+            form:
+                fields:
+                    photo:
+                        label: Фото
+                        type: mediafinder
+                        mode: image
+                        span: storm
+                        cssClass: col-xs-1
+                    name:
+                        label: ФИО
+                        type: text
+                        span: storm
+                        cssClass: col-xs-6
+                    job_title:
+                        label: Должность
+                        type: text
+                        span: storm
+                        cssClass: col-xs-5
+
         # TAB: PARTNERS
         partners_title:
             tab: Partners
@@ -158,6 +200,18 @@ tabs:
                         type: mediafinder
                         mode: image
                         
+        # TAB: GALEREY
+        gallerey_images:
+            tab: Gallereys
+            label: Ваши фотографий
+            size: small
+            type: repeater
+            form:
+                fields:
+                    image:
+                        label: Добавить фотографий для галерей
+                        type: mediafinder
+                        mode: folder
 
         # TAB: HERO        
         hero_button_text:

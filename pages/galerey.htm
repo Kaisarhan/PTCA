@@ -1,0 +1,67 @@
+title = "galerey"
+url = "/galerey"
+layout = "default"
+is_hidden = 0
+==
+
+	<!-- Breadcrumb section -->
+	  {% partial 'elements/breadcrumb' %}
+	<!-- Breadcrumb section end -->
+
+<!-- Gallery -->
+  <section>
+    <div class="container">
+      <div class="row" data-masonry='{"percentPosition": true }'>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <a class="galerey-photo" href="{{'assets/img/gallery/1.jpg'|theme }}">
+            <img src="{{'assets/img/gallery/1.jpg'|theme }}" class="rounded mx-auto d-block" alt="...">
+          </a>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <a class="galerey-photo" href="{{'assets/img/gallery/2.jpg'|theme }}">
+            <img src="{{'assets/img/gallery/2.jpg'|theme }}" class="rounded mx-auto d-block" alt="...">
+          </a>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <a class="galerey-photo" href="{{'assets/img/gallery/3.jpg'|theme }}">
+            <img src="{{'assets/img/gallery/3.jpg'|theme }}" class="rounded mx-auto d-block" alt="...">
+          </a>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <a class="galerey-photo" href="{{'assets/img/gallery/4.jpg'|theme }}">
+            <img src="{{'assets/img/gallery/4.jpg'|theme }}" class="rounded mx-auto d-block" alt="...">
+          </a>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <a class="galerey-photo" href="{{'assets/img/gallery/5.jpg'|theme }}">
+            <img src="{{'assets/img/gallery/5.jpg'|theme }}" class="rounded mx-auto d-block" alt="...">
+          </a>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <a class="galerey-photo" href="{{'assets/img/gallery/6.jpg'|theme }}">
+            <img src="{{'assets/img/gallery/6.jpg'|theme }}" class="rounded mx-auto d-block" alt="...">
+          </a>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <a class="galerey-photo" href="{{'assets/img/gallery/7.jpg'|theme }}">
+            <img src="{{'assets/img/gallery/7.jpg'|theme }}" class="rounded mx-auto d-block" alt="...">
+          </a>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <a class="galerey-photo" href="{{'assets/img/gallery/8.jpg'|theme }}">
+            <img src="{{'assets/img/gallery/8.jpg'|theme }}" class="rounded mx-auto d-block" alt="...">
+          </a>
+        </div>
+      </div>
+    </div>
+
+        {{ dump(this.theme.gallerey_images) }}
+
+        {% for folder in this.theme.gallerey_images %}
+          {% for item in folder.image %}
+          {{ dump(item.index) }}
+          {% endfor %}
+        {% endfor %}
+
+  </section>
+<!-- Gallery -->
