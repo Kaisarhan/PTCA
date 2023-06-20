@@ -198,20 +198,7 @@ tabs:
                     image:
                         label: Логотип вашего партнера
                         type: mediafinder
-                        mode: image
-                        
-        # TAB: GALEREY
-        gallerey_images:
-            tab: Gallereys
-            label: Ваши фотографий
-            size: small
-            type: repeater
-            form:
-                fields:
-                    image:
-                        label: Добавить фотографий для галерей
-                        type: mediafinder
-                        mode: folder
+                        mode: image                        
 
         # TAB: HERO        
         hero_button_text:
@@ -375,7 +362,7 @@ tabs:
                         type: text
                         default: ti-crown
 
-        # TAB: Gallery
+        # TAB: GALLEREY
         gallery_big1:
             tab: Gallerey
             label: Большая фото 1
@@ -447,6 +434,12 @@ tabs:
             span: right
             imageWidth: '100'
             imageHeight: '100'
+
+        gallery_folder:
+            tab: Gallerey
+            label: Введите название папки для страницы Галерея, всё что будет загружено в капку будет отображатся на страници Галерея
+            type: text
+            span: left
 
         # TAB: SOCIAL
         social_facebook:

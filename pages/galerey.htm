@@ -3,7 +3,16 @@ url = "/galerey"
 layout = "default"
 is_hidden = 0
 ==
+/* function onStart() {
+    $this['images'] = \Storage::allFiles('media\gallerey_image');
+} */
 
+function onStart() {
+    $this['images'] = \File::allFiles('storage/app/media/gallerey_image');
+}
+==
+
+{{dump(images)}}
 	<!-- Breadcrumb section -->
 	  {% partial 'elements/breadcrumb' %}
 	<!-- Breadcrumb section end -->
@@ -12,6 +21,15 @@ is_hidden = 0
   <section>
     <div class="container">
       <div class="row" data-masonry='{"percentPosition": true }'>
+
+      {% for gallerey in images %}
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <a class="galerey-photo" href="{{ gallerey|app }}">
+            <img src="{{ gallerey|app }}" class="rounded mx-auto d-block" alt="...">
+          </a>
+        </div>
+      {% endfor %}
+
         <div class="col-sm-6 col-lg-4 mb-4">
           <a class="galerey-photo" href="{{'assets/img/gallery/1.jpg'|theme }}">
             <img src="{{'assets/img/gallery/1.jpg'|theme }}" class="rounded mx-auto d-block" alt="...">
@@ -54,14 +72,5 @@ is_hidden = 0
         </div>
       </div>
     </div>
-
-        {{ dump(this.theme.gallerey_images) }}
-
-        {% for folder in this.theme.gallerey_images %}
-          {% for item in folder.image %}
-          {{ dump(item.index) }}
-          {% endfor %}
-        {% endfor %}
-
   </section>
 <!-- Gallery -->
