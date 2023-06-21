@@ -8,28 +8,30 @@ is_hidden = 0
 } */
 
 function onStart() {
-    $this['images'] = \File::allFiles('storage/app/media/gallerey_image');
+    $this['images'] = \File::allFiles('storage/app/media/gallerey_folder');
+
 }
 ==
 
-{{dump(images)}}
+{# {{dump(images)}} #}
 	<!-- Breadcrumb section -->
 	  {% partial 'elements/breadcrumb' %}
 	<!-- Breadcrumb section end -->
 
+{{dump(images)}}
 <!-- Gallery -->
   <section>
     <div class="container">
       <div class="row" data-masonry='{"percentPosition": true }'>
-
-      {% for gallerey in images %}
-        <div class="col-sm-6 col-lg-4 mb-4">
-          <a class="galerey-photo" href="{{ gallerey|app }}">
-            <img src="{{ gallerey|app }}" class="rounded mx-auto d-block" alt="...">
-          </a>
-        </div>
-      {% endfor %}
-
+        {% if (this.theme.gallery_folder|length > 0)%}
+        {% for gallerey in images %}
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <a class="galerey-photo" href="{{ gallerey|app }}">
+              <img src="{{ gallerey|app }}" class="rounded mx-auto d-block" alt="...">
+            </a>
+          </div>
+        {% endfor %}
+        {% else %}
         <div class="col-sm-6 col-lg-4 mb-4">
           <a class="galerey-photo" href="{{'assets/img/gallery/1.jpg'|theme }}">
             <img src="{{'assets/img/gallery/1.jpg'|theme }}" class="rounded mx-auto d-block" alt="...">
@@ -70,6 +72,7 @@ function onStart() {
             <img src="{{'assets/img/gallery/8.jpg'|theme }}" class="rounded mx-auto d-block" alt="...">
           </a>
         </div>
+        {% endif %}
       </div>
     </div>
   </section>
