@@ -5,7 +5,8 @@ is_hidden = 0
 ==
 use Cms\Classes\Theme;
 function onStart() {
-    $this['gallery_folder'] = \File::allFiles('storage/app/media/' . Theme::getEditTheme()->gallery_folder);
+    $this['gallery_folder'] = File::allFiles('storage/app/media/' . Theme::getEditTheme()->gallery_folder);
+    $this['listFolder'] = Storage::allDirectories('media');
 }
 ==
 
@@ -14,6 +15,7 @@ function onStart() {
 	  {% partial 'elements/breadcrumb' %}
 	<!-- Breadcrumb section end -->
 
+{{dump(listFolder)}}
 <!-- Gallery -->
   <section>
     <div class="container">

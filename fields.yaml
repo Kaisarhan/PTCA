@@ -445,7 +445,11 @@ tabs:
             tab: Gallerey
             label: Status
             type: dropdown
-            options: listStatuses               
+            default: ''
+            options:
+                draft: Draft
+                published: Published
+                archived: Archived            
 
         # TAB: SOCIAL
         social_facebook:
