@@ -1,0 +1,74 @@
+title = "galerey"
+url = "/galerey"
+layout = "default"
+is_hidden = 0
+==
+use Cms\Classes\Theme;
+function onStart() {
+    $this['gallery_folder'] = \File::allFiles('storage/app/media/' . Theme::getEditTheme()->gallery_folder);
+}
+==
+
+{# {{dump(images)}} #}
+	<!-- Breadcrumb section -->
+	  {% partial 'elements/breadcrumb' %}
+	<!-- Breadcrumb section end -->
+
+<!-- Gallery -->
+  <section>
+    <div class="container">
+      <div class="row" data-masonry='{"percentPosition": true }'>
+        {% if (this.theme.gallery_folder|length > 0)%}
+          {% for photo in gallery_folder %}
+            <div class="col-sm-6 col-lg-4 mb-4">
+              <a class="galerey-photo" href="{{ photo }}">
+                <img src="{{ photo }}" class="rounded mx-auto d-block" alt="Фото из галерей">
+              </a>
+            </div>
+          {% endfor %}
+        {% else %}
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <a class="galerey-photo" href="{{'assets/img/gallery/1.jpg'|theme }}">
+              <img src="{{'assets/img/gallery/1.jpg'|theme }}" class="rounded mx-auto d-block" alt="...">
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <a class="galerey-photo" href="{{'assets/img/gallery/2.jpg'|theme }}">
+              <img src="{{'assets/img/gallery/2.jpg'|theme }}" class="rounded mx-auto d-block" alt="...">
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <a class="galerey-photo" href="{{'assets/img/gallery/3.jpg'|theme }}">
+              <img src="{{'assets/img/gallery/3.jpg'|theme }}" class="rounded mx-auto d-block" alt="...">
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <a class="galerey-photo" href="{{'assets/img/gallery/4.jpg'|theme }}">
+              <img src="{{'assets/img/gallery/4.jpg'|theme }}" class="rounded mx-auto d-block" alt="...">
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <a class="galerey-photo" href="{{'assets/img/gallery/5.jpg'|theme }}">
+              <img src="{{'assets/img/gallery/5.jpg'|theme }}" class="rounded mx-auto d-block" alt="...">
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <a class="galerey-photo" href="{{'assets/img/gallery/6.jpg'|theme }}">
+              <img src="{{'assets/img/gallery/6.jpg'|theme }}" class="rounded mx-auto d-block" alt="...">
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <a class="galerey-photo" href="{{'assets/img/gallery/7.jpg'|theme }}">
+              <img src="{{'assets/img/gallery/7.jpg'|theme }}" class="rounded mx-auto d-block" alt="...">
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <a class="galerey-photo" href="{{'assets/img/gallery/8.jpg'|theme }}">
+              <img src="{{'assets/img/gallery/8.jpg'|theme }}" class="rounded mx-auto d-block" alt="...">
+            </a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+<!-- Gallery -->
