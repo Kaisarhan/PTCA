@@ -4,11 +4,17 @@ layout = "default"
 is_hidden = 0
 ==
 /* function onStart() {
-    $this['images'] = \Storage::allFiles('media\gallerey_image');
+    $this['folder_name'] = $this->theme->gallery_folder;
+    $this['images'] = \File::allFiles('storage/app/media/gallerey_folder');
 } */
 
 function onStart() {
-    $this['images'] = \File::allFiles('storage/app/media/gallerey_folder');
+
+    $this['dir_folder'] = $this->theme->gallery_folder;
+    
+    $this['images'] = \File::allFiles("storage/app/media/");
+
+
 
 }
 ==
@@ -18,18 +24,22 @@ function onStart() {
 	  {% partial 'elements/breadcrumb' %}
 	<!-- Breadcrumb section end -->
 
-{{dump(images)}}
+{{dump()}}
 <!-- Gallery -->
   <section>
     <div class="container">
       <div class="row" data-masonry='{"percentPosition": true }'>
+
+
+
         {% if (this.theme.gallery_folder|length > 0)%}
         {% for gallerey in images %}
           <div class="col-sm-6 col-lg-4 mb-4">
-            <a class="galerey-photo" href="{{ gallerey|app }}">
-              <img src="{{ gallerey|app }}" class="rounded mx-auto d-block" alt="...">
+            <a class="galerey-photo" href="{{ gallerey }}">
+              <img src="{{ gallerey }}" class="rounded mx-auto d-block" alt="...">
             </a>
           </div>
+    {#       {{dump(gallerey|app)}} #}
         {% endfor %}
         {% else %}
         <div class="col-sm-6 col-lg-4 mb-4">
