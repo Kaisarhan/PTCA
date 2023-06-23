@@ -4,10 +4,12 @@ layout = "default"
 is_hidden = 0
 ==
 use Cms\Classes\Theme;
-function onStart() {
+
+public function onStart() {
     $this['gallery_folder'] = File::allFiles('storage/app/media/' . Theme::getEditTheme()->gallery_folder);
     $this['listFolder'] = Storage::allDirectories('media');
 }
+
 ==
 
 {# {{dump(images)}} #}

@@ -445,11 +445,10 @@ tabs:
             tab: Gallerey
             label: Status
             type: dropdown
-            default: ''
+            showSearch: false
             options:
-                draft: Draft
-                published: Published
-                archived: Archived            
+                - asd
+
 
         # TAB: SOCIAL
         social_facebook:
