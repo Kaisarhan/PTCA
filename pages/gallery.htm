@@ -1,23 +1,20 @@
-title = "galerey"
-url = "/galerey"
+title = "gallerey"
+url = "/gallerey"
 layout = "default"
 is_hidden = 0
 ==
+<?php
 use Cms\Classes\Theme;
-
 public function onStart() {
     $this['gallery_folder'] = File::allFiles('storage/app/media/' . Theme::getEditTheme()->gallery_folder);
-    $this['listFolder'] = Storage::allDirectories('media');
 }
-
+?>
 ==
-
 {# {{dump(images)}} #}
 	<!-- Breadcrumb section -->
 	  {% partial 'elements/breadcrumb' %}
 	<!-- Breadcrumb section end -->
 
-{{dump(listFolder)}}
 <!-- Gallery -->
   <section>
     <div class="container">

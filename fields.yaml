@@ -441,13 +441,6 @@ tabs:
             type: text
             span: left
 
-        gallery_folder_list:
-            tab: Gallerey
-            label: Status
-            type: dropdown
-            showSearch: false
-            options:
-                - asd
 
 
         # TAB: SOCIAL

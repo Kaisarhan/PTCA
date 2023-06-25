@@ -1,0 +1,27 @@
+title = "test"
+url = "/test"
+layout = "default"
+is_hidden = 0
+==
+<?
+use Cms\Classes\Theme;
+
+public function onStart() {
+    $this['gallery_folder'] = File::allFiles('storage/app/media/' . Theme::getEditTheme()->gallery_folder);
+}
+?>
+==
+{{dump()}}
+<section>
+    <div class="container">
+      <div class="row" data-masonry='{"percentPosition": true }'>
+            {% for photo in gallery_folder %}
+                <div class="col-sm-6 col-lg-4 mb-4">
+                  <a class="galerey-photo" href="{{ photo }}">
+                    <img src="{{ photo }}" class="rounded mx-auto d-block" alt="Фото из галерей">
+                  </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
